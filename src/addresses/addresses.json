@@ -1,0 +1,25 @@
+{
+  "harmony": {
+    "endersGate": "0xAd6f94bDefB6D5ae941392Da5224ED083AE33adc",
+    "exchange": "0x5D6DCd1aA88E2b5442Bd46d8f9f351B2127eE049",
+    "ipfs": "https://ipfs.moralis.io:2053/ipfs/QmXWojzVzRo2NERK3LtrscCXwJ5CrZ8xbnchTgWnTyLDvw",
+    "pack": "0xb90Dc9e354001e6260DE670EDD6aBaDb890C6aC9",
+    "packIpfs": "https://ipfs.moralis.io:2053/ipfs/QmQA1DNdx4dwjQEJueSUfHAcYzyuaUs8rQhrjLqgLgYnyj",
+    "library": "0xEf626C48cBB613F985F32c00d1A521a1Ff765F76",
+    "airdrop": "0x868702a2E25ab4dc33a75DcA408403BCBDEF972A",
+    "eross": "0xE1C04284652be3771D514e5f05F823b35075D70F",
+    "dracul": "0x51BE175Fa7A56B98BCFFA124D6Bd31480b093214",
+    "shop": "0x9Ab1147B4FbFcc88bf393D9Acd58D17f262CE4cC",
+    "router": "0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506",
+    "usdc": "0x985458E523dB3d53125813eD68c274899e9DfAb4",
+    "wone": "0xcf664087a5bb0237a0bad6742852ec6c8d69a27a"
+  },
+  "matic": {
+    "endersGate": "0xaA52cb8fd4a9Aa000AaF3a660bb61BacEd085B2E",
+    "pack": "0x516F333056A89104d0029F13D84A5e28f3ea6C76",
+    "shop": "0xB72b9223FE8862B8a29919b18c552F30085787ad",
+    "usdc": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "wone": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+    "MATICUSD": "0xAB594600376Ec9fD91F8e885dADF0CE036862dE0"
+  }
+}

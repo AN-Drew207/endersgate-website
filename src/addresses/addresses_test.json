@@ -1,0 +1,29 @@
+{
+  "harmony": {
+    "endersGate": "0x6C8E17CCC40acf0ea83eA86dd42c732FEe0bB1e4",
+    "exchange": "0xec729958a6c3d994a64692Ae7e7B58eB577f8a6D",
+    "ipfs": "https://ipfs.moralis.io:2053/ipfs/QmXWojzVzRo2NERK3LtrscCXwJ5CrZ8xbnchTgWnTyLDvw",
+    "pack": "0xdCB1336bD3fd743661249c0c71DD6531CD1F9609",
+    "packIpfs": "https://ipfs.moralis.io:2053/ipfs/QmSug6ooWW4iWQkCCeo9aQhTYfqWD9BMDLMh33thYFbp5",
+    "library": "0x7e36df953FC6f3b41A6bdf70D731d25428023345",
+    "dracul": "0x1bEcA23439c1c6238f1AeF303b94BE03ECf319e7",
+    "eross": "0x0c35203B209cE2Ad1DC91e5A2c19890406033C16",
+    "airdrop": "0xfcFeF478a960B04F13aecC466d7fAcE6aD707c7e",
+    "shop": "0x777292402a3a8cA33F5a16a4395c4c7604509E2b"
+  },
+  "matic": {
+    "endersGate": "0x3963660Def83dF8882DacF18A018cC69F0655B7E",
+    "ipfs": "https://ipfs.moralis.io:2053/ipfs/QmXWojzVzRo2NERK3LtrscCXwJ5CrZ8xbnchTgWnTyLDvw",
+    "packIpfs": "https://ipfs.moralis.io:2053/ipfs/QmQA1DNdx4dwjQEJueSUfHAcYzyuaUs8rQhrjLqgLgYnyj",
+    "pack": "0xE5Ae172FaeDd0D56353236573EC0fE97A608F03f",
+    "library": "0xbce871fA4C85a6b25A502363606C8EEA8aF89fFc",
+    "shop": "0x2d000eBA5fc8AD0f428cE84ed50E65c746AB99cB",
+    "MATICUSD": "0xd0D5e3DB44DE05E9F294BB0a3bEEaF030DE24Ada",
+    "battlePass": "0x8e9D0226B9009EA31Cd6B32bFb401693cBA2934c",
+    "comics": "0x969379C69b48Dd240CA9d5D88975778dcB5b8113"
+  },
+  "ethereum": {
+    "comics": "0x7BF1678fA1F94D5D6D83e6a4c48C7D44e3F5a693",
+    "MATICUSD": "0x694AA1769357215DE4FAC081bf1f309aDC325306"
+  }
+}

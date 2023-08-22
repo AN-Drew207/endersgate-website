@@ -1,0 +1,28 @@
+.carousel {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 50%;
+}
+
+.card {
+ 
+  height: auto;
+  position: absolute;
+  transform-origin: bottom center;
+  transition: transform 1s ease-out;
+}
+
+.card.center {
+  filter: none;
+}
+
+.mobile-carosel{
+  transform: translateY(-29px);
+
+}
+
+
+

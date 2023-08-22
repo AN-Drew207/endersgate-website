@@ -1,0 +1,231 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: #fff;
+  z-index: 2;
+}
+.background {
+  color: #000;
+}
+
+.bottom-div {
+  position: absolute;
+  top: 500px;
+  width: 100%;
+  height: 200px;
+  background-color: #000;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.mobile-background {
+  background-image: url("/assets/Background 1 (1).png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: calc(100vh - 70px);
+  position: relative;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .video {
+    display: none;
+  }
+
+  .mobile-background {
+    height: calc(100vh - 60px);
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-background {
+    display: none;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: #fff;
+  z-index: 2;
+}
+.background {
+  color: #000;
+}
+
+.video-container {
+  position: absolute;
+  margin-top: 60px; /* adjust this to match the height of your header */
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.mobile-background {
+  background-image: url("/assets/Background 1 (1).png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: calc(100vh - 70px);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .video {
+    display: none;
+  }
+
+  .mobile-background {
+    height: calc(100vh - 60px);
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-background {
+    display: none;
+  }
+}
+
+.card-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+.card-carousel .card-slider {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.card-carousel .card-slider::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.card-carousel .card-slider::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem;
+}
+
+.card-carousel .card-slider::-webkit-scrollbar-track {
+  background-color: #f2f2f2;
+  border-radius: 0.25rem;
+}
+
+.card-carousel .card-slider .card {
+  flex: 0 0 20%;
+  margin: 0 0.75rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-carousel .card-slider .card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-carousel .card-slider .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-carousel .slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.card-carousel .slider-btn:hover {
+  background-color: #626262;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.card-carousel .slider-btn.right {
+  right: 1rem;
+}
+
+.card-carousel .slider-btn.left {
+  left: 1rem;
+}
+
+.links-div {
+  left: 0;
+  height: 900px;
+  width: 100%;
+  top: 62.5%; /* adjust the percentage as needed */
+  transform: translateY(-50%);
+  background-color: #000;
+  justify-content: center;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 20px;
+  justify-items: center;
+
+  margin: auto;
+  max-width: 800px;
+  height: 50%;
+}
+
+.link {
+  flex: 1 1 300px;
+  max-width: 764px;
+  max-height: 326px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+.link-text {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+}

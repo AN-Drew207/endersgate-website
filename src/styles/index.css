@@ -1,0 +1,477 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  overflow-x: hidden;
+}
+
+* {
+  font-family: "Poppins", sans-serif !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.qoute,
+.description {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem !important;
+}
+
+.element-container {
+  animation: fadeIn 1s;
+}
+
+.icon:hover {
+  color: white !important;
+  cursor: pointer;
+}
+
+.text {
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  color: #d2a2ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.7rem;
+}
+
+.text:hover {
+  color: white;
+}
+
+.text:focus {
+  color: white;
+}
+
+.text:focus div {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.335),
+    white,
+    rgba(0, 0, 0, 0.335)
+  );
+  height: 2px;
+  width: 100%;
+}
+
+.card-fig {
+  position: relative;
+  transform-origin: center top;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  transition: 0.3s;
+}
+
+.card-fig::after {
+  content: "";
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0px;
+  opacity: 0.1;
+  transform: rotate(0deg);
+  background: linear-gradient(
+    to top,
+    transparent,
+    #fff 15%,
+    rgba(255, 255, 255, 0.5)
+  );
+  transition: 0.3s;
+}
+
+.card-fig:hover {
+  box-shadow: 0 8px 16px 3px rgba(0, 0, 0, 0.6);
+  transform: translateY(-3px) scale(1.05) rotateX(15deg);
+}
+
+.card-fig:hover::after {
+  transform: rotate(0deg);
+  top: 0%;
+  opacity: 0.15;
+}
+
+.card-bottom {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.335),
+    white,
+    rgba(0, 0, 0, 0.335)
+  );
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: #22223e; /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #68648c;
+  /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+}
+
+.filter-container::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+.filter-container::-webkit-scrollbar-track {
+  background: transparent; /* color of the tracking area */
+}
+.filter-container::-webkit-scrollbar-thumb {
+  background-color: #d2a2ff; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: #bc8b30;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.deck {
+  margin-right: 0;
+  display: none;
+  z-index: 1;
+  height: 80%;
+}
+
+.cardPreview {
+  height: auto;
+  width: 40vw;
+}
+
+.character {
+  margin-top: 0.5rem;
+  width: 50%;
+  z-index: 2;
+  object-fit: contain;
+  height: 17rem;
+}
+
+.description {
+  margin-top: 1rem !important;
+}
+
+.underline {
+  margin-top: -0.5rem;
+  width: 100% !important;
+}
+
+@media (min-width: 300px) and (max-width: 400px) {
+  .nft-mob {
+    height: 70vh !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .character {
+    height: 25rem;
+  }
+  .character.venom {
+    height: 25rem;
+  }
+  .qoute,
+  .description {
+    font-size: 1.5rem !important;
+  }
+  .qoute,
+  .description {
+    font-size: 1rem !important;
+  }
+  .character.venom,
+  .character.mystic,
+  .character.void {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .deck {
+    display: block;
+  }
+}
+
+@media (min-width: 1280px) {
+  .underline {
+    width: 15rem !important;
+  }
+  .element-container {
+    position: relative;
+    z-index: 121;
+  }
+  .deck {
+    display: block;
+    margin-right: 20rem;
+    /* margin-right: -17rem; */
+    /* position: relative; */
+    height: 33rem;
+    margin-bottom: -3rem;
+  }
+  .character {
+    width: 100%;
+    margin-top: 0;
+    height: 32rem;
+    object-fit: contain;
+    position: absolute;
+    left: 32%;
+  }
+
+  .character.venom {
+    height: 37rem !important;
+  }
+
+  .character.mystic {
+    height: 37rem !important;
+  }
+
+  .character.void {
+    height: 37rem !important;
+  }
+
+  .description {
+    margin-top: 2rem !important;
+  }
+}
+
+@media (min-width: 1560px) {
+  .character {
+    left: 30%;
+    height: 36rem;
+  }
+}
+
+@media (min-width: 2160px) {
+  .deck {
+    margin-top: 2rem;
+  }
+}
+
+.timeline::before {
+  content: "";
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #bc8b30;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: -2rem;
+}
+
+.container {
+  padding: 15px 30px;
+  position: relative;
+  background: inherit;
+  width: 50%;
+}
+
+.container.left {
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container.right {
+  left: 50%;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: calc(50% - 8px);
+  right: -8px;
+  background: #bc8b30;
+  border: 2px solid #bc8b30;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.container.right::after {
+  left: -8px;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: calc(50% - 1px);
+  right: 8px;
+  background: #bc8b30;
+  z-index: 1;
+}
+
+.container.right::before {
+  left: 8px;
+}
+
+.container .date {
+  position: absolute;
+  display: inline-block;
+  top: calc(50% - 8px);
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #006e51;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+.container.left .date {
+  right: -75px;
+}
+
+.container.right .date {
+  left: -75px;
+}
+
+.container .icon {
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 9px 0;
+  top: calc(50% - 20px);
+  background: #f6d155;
+  border: 2px solid #006e51;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #006e51;
+  z-index: 1;
+}
+
+.container.left .icon {
+  right: 56px;
+}
+
+.container.right .icon {
+  left: 56px;
+}
+
+.container .content {
+  padding: 10px 30px 50px 10px;
+  background: #181426;
+  border: 2px solid #bc8b30;
+  position: relative;
+  border-radius: 1rem;
+  width: 30rem;
+}
+
+.container.right .content {
+  padding: 10px 10px 10px 10px;
+  border-radius: 1rem;
+}
+
+.container .content h2 {
+  margin: 0 0 2px 0;
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffab10;
+}
+
+.container .content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: white;
+}
+
+@media (max-width: 767.98px) {
+  .timeline::after {
+    left: 50%;
+  }
+
+  .container {
+    width: 100%;
+    z-index: 122;
+    /* padding-left: 120px; */
+    /* padding-right: 30px; */
+  }
+
+  .container.right {
+    left: 0%;
+  }
+
+  .container.left::after,
+  .container.right::after {
+    display: none;
+  }
+
+  .container.left::before,
+  .container.right::before {
+    left: 100px;
+    display: none;
+    border-color: transparent #006e51 transparent transparent;
+  }
+
+  .container.left .date,
+  .container.right .date {
+    right: auto;
+    left: 15px;
+  }
+
+  .container.left .icon,
+  .container.right .icon {
+    right: auto;
+    left: 146px;
+  }
+
+  .container.left .content,
+  .container.right .content {
+    /* padding: 30px 30px 30px 90px; */
+    border-radius: 1rem;
+    width: 100%;
+    background-color: #181426;
+  }
+
+  .container.left .content h2,
+  .container.right .content h2 {
+    font-size: 1.22rem;
+  }
+  .container.left .content p,
+  .container.right .content p {
+    font-size: 0.8rem;
+  }
+}
