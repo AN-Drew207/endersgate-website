@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const styles = {
   // back: {
@@ -19,7 +19,9 @@ interface Props {
   onClose: () => void;
 }
 
-const Dialog: React.FunctionComponent<Props> = (props) => {
+const Dialog: React.FunctionComponent<Props & React.PropsWithChildren> = (
+  props,
+) => {
   const { open, onClose, children } = props;
   const rootRef = React.useRef(null);
 

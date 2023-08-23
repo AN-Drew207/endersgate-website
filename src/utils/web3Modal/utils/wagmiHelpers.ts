@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import type * as WagmiTypes from "@wagmi/core";
 import { chain, configureChains, createClient } from "@wagmi/core";
 // import type { EthereumOptions } from "../../../types/apiTypes";
 import { defaultConnectors, providers } from "./wagmiTools";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let client = undefined as WagmiTypes.Client<any, any> | undefined;
 
 export function getClient() {

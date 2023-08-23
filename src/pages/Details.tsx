@@ -15,14 +15,13 @@ import {
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Tilt from "react-parallax-tilt";
-import gallerybg from "../assets/gallerybg.svg";
 import cards from "@/metadata/cards.json";
 import { MdOutlineLoop } from "react-icons/md";
 import { convertArrayCards } from "@/components/common/convertCards";
 
 const Details = () => {
   const [allCards, setAllCards] = useState([]);
-  const [synergiesCards, setSynergiesCards] = useState([]);
+  const [synergiesCards, setSynergiesCards] = useState<any[]>([]);
   const [role, setRole] = useState("");
   const [cardType, setCardType] = useState("");
   const [isCardFlipped, setisCardFlipped] = useState(false);
@@ -143,7 +142,7 @@ const Details = () => {
       flexDir="column"
       bgSize="cover"
       bgRepeat="no-repeat"
-      bgImage={`url(${gallerybg})`}
+      bgImage={`url(./assets/gallerybg.svg)`}
       minHeight="100vh"
     >
       <Flex
@@ -381,7 +380,7 @@ const Details = () => {
             </Flex>
             {synergiesCards?.length === 2 ? (
               <Flex w="full" justifyContent="center">
-                {synergiesCards?.map((item) => (
+                {synergiesCards?.map((item: any) => (
                   <Image
                     cursor="pointer"
                     key={item?.name}
@@ -405,7 +404,7 @@ const Details = () => {
                     }}
                     w="140px"
                     h="180px"
-                    alt={items.description}
+                    alt={item?.description}
                     mx={2}
                     src={item?.properties?.image?.value}
                   />

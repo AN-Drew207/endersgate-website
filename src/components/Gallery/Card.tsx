@@ -13,7 +13,14 @@ const Card = ({
   rarity,
   balance,
 }: any) => {
-  const display = (description, image, cardType, name, rarity, card) => {
+  const display = (
+    description: any,
+    image: any,
+    cardType: any,
+    name: any,
+    rarity: any,
+    card: any,
+  ) => {
     // navigate("/gallery/detailpage", {
     //   state: {
     //     desc: description,

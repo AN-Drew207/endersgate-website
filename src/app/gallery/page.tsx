@@ -21,7 +21,7 @@ const Gallery = () => {
     value: "price-high-low",
     label: "Price High-Low",
   });
-  const [filters, setFilters] = React.useState({
+  const [filters, setFilters] = React.useState<any>({
     avatar: [],
     cardRole: [],
     cardRace: [],
@@ -29,9 +29,9 @@ const Gallery = () => {
     owned: [],
   });
   const [search, setSearch] = React.useState("");
-  const [cards, setCards] = React.useState([]);
+  const [cards, setCards] = React.useState<any>([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [balance, setBalance] = React.useState([]);
+  const [balance, setBalance] = React.useState<any>([]);
   const [connected, setConnected] = React.useState(false);
   const { endersGate, pack } = useSelector(
     (state: any) => state.blockchain.addresses,
@@ -276,17 +276,21 @@ const Gallery = () => {
   const onGetAssets = async (address: any) => {
     try {
       const web3 = new Web3(networkConfigs[network].rpc);
-      console.log("pack", pack, "cards", endersGate);
-      const cardsContract = new web3.eth.Contract(EndersGateABI, endersGate);
-      const packsContract = new web3.eth.Contract(PackContractABI, pack);
+      const cardsContract: any = new web3.eth.Contract(
+        EndersGateABI,
+        endersGate,
+      );
+      const packsContract: any = new web3.eth.Contract(PackContractABI, pack);
       const packsIds = [0, 1, 2, 3];
-      const cardsIds = Object.values(cards)
-        .reduce((acc, cur) => acc.concat(cur), [])
-        .map((card, i) =>
+      const cardsIdsPreFilter: any = Object.values(cards);
+      const cardsIds = cardsIdsPreFilter
+        .reduce((acc: any, cur: any) => acc.concat(cur), [])
+        .map((card: any, i: any) =>
           card.properties?.id?.value !== undefined
             ? card.properties?.id?.value
             : i,
         );
+
       const balancePacks = await packsContract.methods
         .balanceOfBatch(
           packsIds.map(() => address),
@@ -301,7 +305,7 @@ const Gallery = () => {
         .call();
 
       return {
-        balanceCards: cardsIds.map((id, i) => ({
+        balanceCards: cardsIds.map((id: any, i: any) => ({
           id,
           balance: balanceCards[i],
           cardType: cards[i]?.typeCard ? cards[i].typeCard : "",
@@ -382,7 +386,7 @@ const Gallery = () => {
           ]}
         >
           {cards
-            .sort((a, b) => handleSort(a, b))
+            .sort((a: any, b: any) => handleSort(a, b))
             .filter((card: any) => filterCards(card))
             .map((card: any) => (
               <GridItem key={card?.properties?.id?.value} w="100%">

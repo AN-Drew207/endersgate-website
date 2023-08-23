@@ -43,7 +43,7 @@ export const useCartModal = () => {
       setTokenSelected,
       buy,
       isShow,
-    }) => {
+    }: any) => {
       console.log(priceMatic, "MAMAÑEMA");
       return (
         <Transition.Root show={isShow} as={Fragment}>
@@ -133,6 +133,7 @@ export const useCartModal = () => {
                           {tokensAllowed.map((item: any, index: any) => {
                             return (
                               <div
+                                key={item.address + "-" + index}
                                 className={clsx(
                                   "w-24 flex items-center justify-center gap-1 rounded-xl cursor-pointer py-1 border border-white",
 
@@ -250,7 +251,7 @@ export const useCartModal = () => {
                           className="w-20 h-20"
                           alt=""
                         />
-                        There aren't items in your cart.
+                        {"There aren't items in your cart."}
                       </div>
                     )}
                   </div>

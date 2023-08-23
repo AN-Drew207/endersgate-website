@@ -9,7 +9,6 @@ import { onUpdateUser } from "@/redux/actions";
 import { useWeb3React } from "@web3-react/core";
 import { mainExpected } from "@/components/common/getAddresses";
 import { useDispatch, useSelector } from "react-redux";
-import gallerybg from "../assets/gallerybg.svg";
 import { switchChain } from "@/components/common/switchChain";
 import { useRouter } from "next/router";
 
@@ -84,7 +83,7 @@ const Login = () => {
       <div className="max-w-[100vw] overflow-hidden h-screen w-full flex flex-col items-center justify-center gap-10">
         <div className="absolute h-screen max-w-full overflow-hidden">
           <img
-            src={gallerybg}
+            src={"./assets/gallerybg.svg"}
             className={`relative min-w-[120vw] min-h-[101vh] top-0 right-0 left-[-8%] mx-auto`}
             alt=""
           />
