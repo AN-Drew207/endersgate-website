@@ -2,7 +2,7 @@ import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
 import clsx from "clsx";
 
-const Heading = ({ connected, connectWallet }) => {
+const Heading = ({ connected, connectWallet }: any) => {
   return (
     <Flex
       className="relative"

@@ -1,17 +1,5 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Image,
-  Stack,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Text,
-  Tr,
-  useMediaQuery,
-} from "@chakra-ui/react";
+/* eslint-disable jsx-a11y/alt-text */
+import { Box, Button, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Tilt from "react-parallax-tilt";

@@ -13,7 +13,7 @@ import {
   removePassFromCart,
 } from "@/redux/actions";
 
-export const BattlePassProgress = ({ show, priceUSD }) => {
+export const BattlePassProgress = ({ show, priceUSD }: any) => {
   const dispatch = useDispatch();
 
   return (

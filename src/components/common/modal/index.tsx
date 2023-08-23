@@ -13,7 +13,7 @@ export const useModal = () => {
     setIsShow(true);
   };
 
-  const Modal = useCallback(({ children, isShow, withoutX }) => {
+  const Modal = useCallback(({ children, isShow, withoutX }: any) => {
     return (
       <Transition.Root show={isShow} as={Fragment}>
         <Dialog

@@ -1,6 +1,5 @@
 import contracts from "@/contracts";
 import Web3 from "web3";
-import { AbiItem } from "web3-utils";
 
 export const getWeb3 = (provider?: any) => {
   return new Web3(provider ? provider : window.ethereum);

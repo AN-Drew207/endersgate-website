@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React from "react";
 import { Button } from "@/components/common/button";
@@ -10,7 +11,7 @@ import { useWeb3React } from "@web3-react/core";
 import { mainExpected } from "@/components/common/getAddresses";
 import { useDispatch, useSelector } from "react-redux";
 import { switchChain } from "@/components/common/switchChain";
-import { useRouter } from "next/router";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const Login = () => {
   const [loading, setLoading] = React.useState(false);
@@ -28,7 +29,8 @@ const Login = () => {
 
   const { account: user, provider } = useWeb3React();
 
-  const { query, ...router } = useRouter();
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const dispatch = useDispatch();
   const handleLogin = async () => {
     setLoading(true);
@@ -36,9 +38,14 @@ const Login = () => {
       await login(dispatch);
       localStorage.setItem("typeOfConnection", "magic");
       localStorage.setItem("loginTime", new Date().getTime().toString());
-      const queryAddress: any = query.redirectAddress?.toString();
-      if (query.redirect == "true" && query.redirectAddress != null) {
-        router.push(query.redirectAddress != undefined ? queryAddress : "/");
+      const queryAddress: any = searchParams.get("redirectAddress")?.toString();
+      if (
+        searchParams.get("redirect") == "true" &&
+        searchParams.get("redirectAddress") != null
+      ) {
+        router.push(
+          searchParams.get("redirectAddress") != undefined ? queryAddress : "/",
+        );
       }
     } catch (err) {
       console.log({ err });
@@ -58,7 +65,7 @@ const Login = () => {
       console.log(connection);
       localStorage.setItem("typeOfConnection", title);
       localStorage.setItem("loginTime", new Date().getTime().toString());
-      const queryAddress: any = query.redirectAddress?.toString();
+      const queryAddress: any = searchParams.get("redirectAddress")?.toString();
       await switchChain(network, networkName, provider);
 
       dispatch(
@@ -69,8 +76,13 @@ const Login = () => {
           providerName: "web3react",
         } as any),
       );
-      if (query.redirect == "true" && query.redirectAddress != null) {
-        router.push(query.redirectAddress != undefined ? queryAddress : "/");
+      if (
+        searchParams.get("redirect") == "true" &&
+        searchParams.get("redirectAddress") != null
+      ) {
+        router.push(
+          searchParams.get("redirectAddress") != undefined ? queryAddress : "/",
+        );
       }
     } catch (err) {
       console.log({ err });

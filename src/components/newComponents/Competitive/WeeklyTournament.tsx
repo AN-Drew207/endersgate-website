@@ -2,7 +2,7 @@
 import clsx from "clsx";
 
 // get total seconds between the times
-var endDate = Math.abs(nextDate(0) - new Date()) / 1000;
+var endDate = Math.abs(Number(nextDate(0)) - Number(new Date())) / 1000;
 // calculate (and subtract) whole days
 var days = Math.floor(endDate / 86400);
 endDate -= days * 86400;
@@ -11,7 +11,7 @@ endDate -= days * 86400;
 var hours = Math.floor(endDate / 3600) % 24;
 endDate -= hours * 3600;
 
-function nextDate(dayIndex) {
+function nextDate(dayIndex: any) {
   var today = new Date();
   today.setDate(
     today.getDate() + ((dayIndex - 1 - today.getDay() + 7) % 7) + 1,
@@ -19,7 +19,7 @@ function nextDate(dayIndex) {
   return today;
 }
 
-function lastDate(dayIndex) {
+function lastDate(dayIndex: any) {
   var today = new Date();
 
   today.setDate(
@@ -29,7 +29,7 @@ function lastDate(dayIndex) {
   return today;
 }
 
-function newLastDate(dayIndex) {
+function newLastDate(dayIndex: any) {
   var now = new Date();
 
   var futureDate = new Date();
@@ -63,7 +63,7 @@ const nextRewards = [
   { name: "Common Pack", image: "/assets/packs/common1080.png" },
 ];
 
-export const WeeklyTournament = ({ lastWinners }) => {
+export const WeeklyTournament = ({ lastWinners }: any) => {
   return (
     <div className="flex flex-col gap-10 items-center justify-center sm:w-4/5 w-full relative overflow-hidden">
       <img

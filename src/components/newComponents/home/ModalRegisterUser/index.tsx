@@ -49,7 +49,7 @@ export const useModalRegisterUser = () => {
   };
 
   const ModalRegister = (
-    <Modal isShow={isShow} NoClose withoutX>
+    <Modal isShow={isShow} withoutX>
       <div
         style={{ width: "90vw", maxWidth: "500px" }}
         className="relative bg-gray-900 flex flex-col items-center gap-4 jusify-center shadow-2xl rounded-2xl mt-16"

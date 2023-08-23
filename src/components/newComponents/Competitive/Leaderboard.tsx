@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import { AddressTextLeaderBoard } from "@/components/common/specialFields/SpecialFields";
 
-var endDate = Math.abs(nextDate(0) - new Date()) / 1000;
+var endDate = Math.abs(nextDate(0) - Number(new Date())) / 1000;
 // calculate (and subtract) whole days
 var days = Math.floor(endDate / 86400);
 endDate -= days * 86400;
@@ -57,16 +57,16 @@ export const Leaderboard = ({ setLastWinners }: any) => {
     ]);
 
     const realData = data
-      .map((user) => {
+      .map((user: any) => {
         return {
           ...user,
           histories: user.histories.filter(
-            (game) =>
+            (game: any) =>
               game.finish_time < nextDate(0) && game.finish_time > lastDate(0),
           ),
         };
       })
-      .map((user) => {
+      .map((user: any) => {
         let wins = 0,
           losses = 0,
           points = 0;
@@ -89,17 +89,17 @@ export const Leaderboard = ({ setLastWinners }: any) => {
       });
 
     const lastWinners = data
-      .map((user) => {
+      .map((user: any) => {
         return {
           ...user,
           histories: user.histories.filter(
-            (game) =>
+            (game: any) =>
               game.finish_time < lastDate(0) &&
               game.finish_time > secondToLastDate(0),
           ),
         };
       })
-      .map((user) => {
+      .map((user: any) => {
         let wins = 0,
           losses = 0,
           points = 0;
@@ -120,8 +120,8 @@ export const Leaderboard = ({ setLastWinners }: any) => {
         }
         return { ...user, wins: wins, losses: losses, points: points };
       })
-      .sort((a, b) => b.points - a.points)
-      .filter((user, i) => i < 3);
+      .sort((a: any, b: any) => b.points - a.points)
+      .filter((user: any, i: any) => i < 3);
     setData(realData);
     setLastWinners(lastWinners);
   };
@@ -183,10 +183,10 @@ export const Leaderboard = ({ setLastWinners }: any) => {
           </thead>
 
           <tbody>
-            {data.filter((i, id) => i.address == account).length ? (
+            {data.filter((i: any, id) => i.address == account).length ? (
               data
-                .sort((a, b) => b.points - a.points)
-                .map((i, id) => {
+                .sort((a: any, b: any) => b.points - a.points)
+                .map((i: any, id: any) => {
                   return { ...i, rank: id + 1 };
                 })
                 .filter((i) => i.address == account)
@@ -235,9 +235,9 @@ export const Leaderboard = ({ setLastWinners }: any) => {
               </tr>
             )}
             {data
-              .sort((a, b) => b.points - a.points)
+              .sort((a: any, b: any) => b.points - a.points)
               .filter((i, id) => id < 25)
-              .map((user, i) => {
+              .map((user: any, i) => {
                 return (
                   <tr key={user.id} className="">
                     <td className="px-2 py-2 whitespace-nowrap text-lg text-center text-[#b8b8b8] border border-[#c4ac6a]">

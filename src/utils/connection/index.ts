@@ -36,7 +36,7 @@ const [walletConnect, walletConnectHooks] = initializeConnector<WalletConnect>(
 );
 
 export const walletConnectConnection: Connection = {
-  connector: walletConnect,
+  connector: walletConnect as any,
   hooks: walletConnectHooks,
   type: ConnectionType.WALLET_CONNECT,
 };
@@ -46,7 +46,7 @@ const [metaMask, metamaskHooks] = initializeConnector<MetaMask>(
 );
 
 export const metamaskConnection: Connection = {
-  connector: metaMask,
+  connector: metaMask as any,
   hooks: metamaskHooks,
   type: ConnectionType.INJECTED,
 };
@@ -56,12 +56,12 @@ const [gnosisSafe, gnosisSafeHooks] = initializeConnector<GnosisSafe>(
 );
 
 export const gnosisSafeConnection: Connection = {
-  connector: gnosisSafe,
+  connector: gnosisSafe as any,
   hooks: gnosisSafeHooks,
   type: ConnectionType.GNOSIS_SAFE,
 };
 
-const [coinbaseWallet, coinbaseHooks] = initializeConnector<Connector>(
+const [coinbaseWallet, coinbaseHooks] = initializeConnector<any>(
   (actions: any) => {
     const options: any = {
       url: "", //TODO
@@ -93,7 +93,7 @@ export const [network, networkHooks] = initializeConnector<Network>(
 );
 
 export const networkConnection: Connection = {
-  connector: network,
+  connector: network as any,
   hooks: networkHooks,
   type: ConnectionType.NETWORK,
 };

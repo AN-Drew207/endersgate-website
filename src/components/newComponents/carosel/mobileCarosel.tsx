@@ -69,14 +69,14 @@ function MobileCarousel() {
         setCardPositions((prevPositions) => {
           const newPositions = [...prevPositions];
           const firstPosition = newPositions.shift();
-          newPositions.push(firstPosition);
+          newPositions.push(firstPosition as any);
           return newPositions;
         });
-      }, 2000);
+      }, 2000) as any;
     };
 
     const stopAutoSwitch = () => {
-      clearInterval(intervalRef.current);
+      clearInterval(intervalRef.current as any);
     };
 
     // handleResize();
@@ -97,7 +97,7 @@ function MobileCarousel() {
   const handlePrevButtonClick = () => {
     setCardPositions((prevPositions) => {
       const newPositions = [...prevPositions];
-      const lastPosition = newPositions.pop();
+      const lastPosition: any = newPositions.pop();
       newPositions.unshift(lastPosition);
       return newPositions;
     });
@@ -107,7 +107,7 @@ function MobileCarousel() {
   const handleNextButtonClick = () => {
     setCardPositions((prevPositions) => {
       const newPositions = [...prevPositions];
-      const firstPosition = newPositions.shift();
+      const firstPosition: any = newPositions.shift();
       newPositions.push(firstPosition);
       return newPositions;
     });
@@ -143,7 +143,7 @@ function MobileCarousel() {
         onClick={handlePrevButtonClick}
       >
         <img
-          src={leftButtonImage}
+          src={"./assets/buttons/caroselButtons/leftCaroselButton.png"}
           alt="Left Button"
           style={{ width: "30px", height: "30px" }}
         />
@@ -154,7 +154,7 @@ function MobileCarousel() {
         onClick={handleNextButtonClick}
       >
         <img
-          src={rightButtonImage}
+          src={"./assets/buttons/caroselButtons/rightCaroselButton.png"}
           alt="Right Button"
           style={{ width: "30px", height: "30px" }}
         />
