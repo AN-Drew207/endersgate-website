@@ -18,7 +18,6 @@ import Tilt from "react-parallax-tilt";
 import gallerybg from "../assets/gallerybg.svg";
 import cards from "@/metadata/cards.json";
 import { MdOutlineLoop } from "react-icons/md";
-import arrowleftdetailspage from "../assets/arrowleftdetailspage.svg";
 import { convertArrayCards } from "@/components/common/convertCards";
 
 const Details = () => {
@@ -43,7 +42,7 @@ const Details = () => {
   };
 
   const handleSetAllCards = () => {
-    let allCards_ = [];
+    let allCards_: any = [];
     Object.entries(cards).map(([key, value]) =>
       value.map((card) => allCards_.push(card)),
     );
@@ -51,11 +50,10 @@ const Details = () => {
   };
 
   const findSynergies = () => {
-    let arr = [];
-    SYNERGIES?.map((syn) => {
+    let arr: any = [];
+    SYNERGIES?.map((syn: any) => {
       arr.push(convertArrayCards().find((c) => c?.name === syn));
     });
-    console.log("sinergy", arr);
     setSynergiesCards(arr);
   };
 
@@ -168,7 +166,7 @@ const Details = () => {
         >
           <Image
             w="4"
-            src={arrowleftdetailspage}
+            src={"./assets/arrowleftdetailspage.svg"}
             style={{ marginRight: ".5rem" }}
           />
           <Text color="galleryGold">BACK</Text>
