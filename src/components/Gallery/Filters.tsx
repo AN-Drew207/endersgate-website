@@ -28,8 +28,7 @@ const Filters = ({
   connectWallet,
   length,
   connected,
-}) => {
-  //   const length = Object.entries(cards).map(card => card[1].length).reduce((a, b) => a + b, 0)
+}: any) => {
   const [open, setOpen] = useState(false);
   const { Option, SingleValue } = components;
   const [isDesktop] = useMediaQuery("(min-width: 1280px)");
@@ -43,10 +42,8 @@ const Filters = ({
     { value: "health-high-low", label: "Health High-Low" },
   ];
 
-  const CustomOption = (props) => (
+  const CustomOption = (props: any) => (
     <Option {...props}>
-      {/* <Flex cursor="pointer" _hover={{border: "1px solid #fff"}} transition=".5s all ease" border="1px solid gold" borderRadius="none" justifyContent="center" alignItems="center" px={2} h="10" bg="transparent" > */}
-      {/* <Text mr={1} color="#FFDB8A" >Sorting: </Text> */}
       <AiOutlineSortAscending color="#FFDB8A" />
       <Text mr={4} ml={2} color="#FFDB8A">
         {props.data.label}
@@ -54,12 +51,10 @@ const Filters = ({
       {props.isSelected === true && (
         <Image w="5" h="5" src={"./assets/selectedoptionarrow.svg"} />
       )}
-      {/* <RiArrowDownSFill color= "yes" :"#FFDB8A" /> */}
-      {/* </Flex> */}
     </Option>
   );
 
-  const customSelectedValue = (props) => (
+  const customSelectedValue = (props: any) => (
     <SingleValue {...props}>
       <Text mr={2} color="#FFDB8A">
         Sort:{" "}
@@ -72,7 +67,7 @@ const Filters = ({
   );
 
   const sortStyle = {
-    control: (base) => ({
+    control: (base: any) => ({
       ...base,
       border: "1px solid gold",
       width: "15rem",
@@ -83,19 +78,19 @@ const Filters = ({
         border: "1px solid gold",
       },
     }),
-    dropdownIndicatorContainer: (base) => ({
+    dropdownIndicatorContainer: (base: any) => ({
       ...base,
       display: "none",
     }),
-    indicatorsContainer: (base) => ({
+    indicatorsContainer: (base: any) => ({
       ...base,
       display: "none",
     }),
-    placeholder: (base) => ({
+    placeholder: (base: any) => ({
       ...base,
       color: "#fff",
     }),
-    option: (base, state) => ({
+    option: (base: any, state: any) => ({
       ...base,
       background: "transparent",
       width: "15rem",
@@ -107,19 +102,19 @@ const Filters = ({
         background: "#4f3f1e",
       },
     }),
-    menu: (base) => ({
+    menu: (base: any) => ({
       ...base,
       background: "rgba(0,0,0,0.5)",
       zIndex: 222,
     }),
-    singleValue: (base, state) => ({
+    singleValue: (base: any, state: any) => ({
       ...base,
       display: "flex",
       alignItems: "center",
     }),
   };
 
-  const handleCardsFilterChange = (type) => {
+  const handleCardsFilterChange = (type: any) => {
     if (cardType === type) {
       setCardType("all");
     } else {
@@ -127,7 +122,7 @@ const Filters = ({
     }
   };
 
-  const handleAvatarChange = (checked, value) => {
+  const handleAvatarChange = (checked: any, value: any) => {
     if (checked) {
       setFilters({ ...filters, avatar: [...filters.avatar, value] });
     } else {
@@ -138,7 +133,7 @@ const Filters = ({
     }
   };
 
-  const handleRaceChange = (checked, value) => {
+  const handleRaceChange = (checked: any, value: any) => {
     if (checked) {
       setFilters({ ...filters, cardRace: [...filters.cardRace, value] });
     } else {
@@ -149,7 +144,7 @@ const Filters = ({
     }
   };
 
-  const handleRoleChange = (checked, value) => {
+  const handleRoleChange = (checked: any, value: any) => {
     if (checked) {
       setFilters({ ...filters, cardRole: [...filters.cardRole, value] });
     } else {
@@ -160,7 +155,7 @@ const Filters = ({
     }
   };
 
-  const handleElementChange = (checked, value) => {
+  const handleElementChange = (checked: any, value: any) => {
     if (checked) {
       setFilters({ ...filters, cardElement: [...filters.cardElement, value] });
     } else {
@@ -171,7 +166,7 @@ const Filters = ({
     }
   };
 
-  const handleOwnedChange = (checked, value) => {
+  const handleOwnedChange = (checked: any, value: any) => {
     if (checked) {
       setFilters({ ...filters, owned: [...filters.owned, value] });
     } else {
@@ -419,10 +414,6 @@ const Filters = ({
           >
             GHOST CARDS
           </Checkbox>
-
-          {/* <Checkbox isChecked={filters.avatar[0] === "no" ? true : false} onChange={e => handleAvatarChange(e.target.checked, "no")} colorScheme="#fff" color="#FFDB8A"  > 
-                No
-            </Checkbox> */}
         </Flex>
         <Flex flexDir="column" mb={4}>
           <Text mb={4} color="#FFDB8A" fontSize="xl" fontWeight="semibold">
@@ -752,7 +743,7 @@ const MobileCardType = ({
   cardType,
   setOpen,
   setSearch,
-}) => {
+}: any) => {
   return (
     <Flex flexDir="column">
       <Flex w="full" justifyContent="center" mb={2}>
