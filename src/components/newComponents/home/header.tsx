@@ -111,10 +111,10 @@ function Header({ redirect }: any) {
           <Box mx="4" className="text-white font-bold text-lg">
             <Link href="/shop">Shop</Link>
           </Box>
-
+          {/* 
           <Box mx="4" className="text-white font-bold text-lg">
             <Link href="/comics">Comics</Link>
-          </Box>
+          </Box> */}
           <Box mx="4" className="text-white font-bold text-lg">
             <Link href="/competitive">Stats</Link>
           </Box>
@@ -181,9 +181,9 @@ function Header({ redirect }: any) {
             <MenuItem className="text-white font-bold text-lg">
               <Link href="/shop">Shop</Link>
             </MenuItem>
-            <MenuItem className="text-white font-bold text-lg">
+            {/* <MenuItem className="text-white font-bold text-lg">
               <Link href="/comics">Comics</Link>
-            </MenuItem>
+            </MenuItem> */}
             <MenuItem className="text-white font-bold text-lg">
               <Link href="/competitive">Stats</Link>
             </MenuItem>
