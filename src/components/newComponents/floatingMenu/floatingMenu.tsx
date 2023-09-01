@@ -67,12 +67,13 @@ function Navbar() {
         >
           Inventory
         </Link>
-        <Link
-          href="/packs"
+        <a
+          href="https://marketplace.endersgate.gg/pack_opening"
+          target="_blank"
           className="menuItem py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
         >
           My packs
-        </Link>
+        </a>
         <Link
           href="/gallery"
           className="menuItem py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
