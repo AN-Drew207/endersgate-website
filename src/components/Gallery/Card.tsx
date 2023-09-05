@@ -1,37 +1,14 @@
 import { Box, Flex, Image, Text, Tooltip } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 import Tilt from "react-parallax-tilt";
 
-const Card = ({
-  card,
-  image,
-  id,
-  description,
-  cardType,
-  name,
-  rarity,
-  balance,
-}: any) => {
-  const display = (
-    description: any,
-    image: any,
-    cardType: any,
-    name: any,
-    rarity: any,
-    card: any,
-  ) => {
-    // navigate("/gallery/detailpage", {
-    //   state: {
-    //     desc: description,
-    //     imge: image,
-    //     ctype: cardType,
-    //     name,
-    //     rarity,
-    //     card,
-    //     id,
-    //   },
-    // });
+const Card = ({ card, image, description, cardType, balance }: any) => {
+  const router = useRouter();
+
+  const display = () => {
+    router.push(`/card?id=${card?.properties?.id?.value}`);
   };
   return (
     <Tooltip
@@ -67,11 +44,10 @@ const Card = ({
       >
         <Tilt>
           <Image
-            onClick={() =>
-              display(description, image, cardType, name, rarity, card)
-            }
+            onClick={() => display()}
             src={image}
             objectFit="contain"
+            alt={card?.properties?.name?.value}
           />
         </Tilt>
         <Box className="card-bottom" w="full" h="2px" />

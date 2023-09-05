@@ -1,28 +1,37 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/alt-text */
+"use client";
 import { Box, Button, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import Tilt from "react-parallax-tilt";
-import cards from "@/metadata/cards.json";
 import { MdOutlineLoop } from "react-icons/md";
 import { convertArrayCards } from "@/components/common/convertCards";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const Details = () => {
   const [allCards, setAllCards] = useState([]);
   const [synergiesCards, setSynergiesCards] = useState<any[]>([]);
   const [role, setRole] = useState("");
-  const [cardType, setCardType] = useState("");
   const [isCardFlipped, setisCardFlipped] = useState(false);
   const [flippedCard, setFlippedCard] = useState("");
-  const navigate = useNavigate();
-  const location = useLocation();
-  const SYNERGIES = location.state.card?.synergies;
+  const router = useRouter();
+  const search = useSearchParams();
+
+  const card = convertArrayCards().find(
+    (c) => c?.properties?.id?.value == search.get("id"),
+  );
+
+  console.log(card);
+
+  console.log(synergiesCards);
+
+  const cards = convertArrayCards();
 
   const classes = ["Fighter", "Mage", "Assassin", "Tank", "Support", "Healer"];
 
   const handleSetRole = () => {
-    classes.map((item, i) => {
-      if (location.state.card.description?.includes(item)) {
+    classes.forEach((item, i) => {
+      if (card?.properties?.description?.value?.includes(item)) {
         setRole(classes[i]);
       }
     });
@@ -30,16 +39,17 @@ const Details = () => {
 
   const handleSetAllCards = () => {
     let allCards_: any = [];
-    Object.entries(cards).map(([key, value]) =>
-      value.map((card) => allCards_.push(card)),
+    Object.entries(cards).forEach((value) =>
+      value.map((card: any) => allCards_.push(card)),
     );
     setAllCards(allCards_);
   };
 
   const findSynergies = () => {
     let arr: any = [];
-    SYNERGIES?.map((syn: any) => {
-      arr.push(convertArrayCards().find((c) => c?.name === syn));
+    card?.synergies.forEach((item: any) => {
+      console.log(cards.find((card) => card.name == item));
+      arr.push(cards.find((card) => card.name == item));
     });
     setSynergiesCards(arr);
   };
@@ -49,7 +59,7 @@ const Details = () => {
   };
 
   const handleFlippedCard = () => {
-    const cardType = location.state.card.typeCard;
+    const cardType = card.typeCard;
     if (cardType === "iron") {
       console.log("iron");
       setFlippedCard("./assets/cardsilver.png");
@@ -96,33 +106,17 @@ const Details = () => {
 
   useEffect(() => {
     findSynergies();
-  }, [SYNERGIES, allCards]);
+  }, [allCards, search.get("id")]);
 
   useEffect(() => {
     handleSetRole();
   }, []);
 
-  // useEffect(() => {
-  //   findCardType();
-  // }, []);
-
   useEffect(() => {
     if (isCardFlipped === true) {
       handleFlippedCard();
     }
-  }, [isCardFlipped, location.state.name]);
-
-  // const arr = ["Elf", "Beast"]
-
-  // const text = "[Beast | Support] Passive: +10 HP to all Ally Guardians. Activate: Execute 1 Enemy champ under 10% health."
-
-  // const currentClass = arr.map((t,i) => {
-  //     if(text.includes(t)){
-  //         return i
-  //     }
-  // })
-
-  // console.log(currentClass)
+  }, [isCardFlipped, card]);
 
   return (
     <Flex
@@ -131,12 +125,14 @@ const Details = () => {
       bgRepeat="no-repeat"
       bgImage={`url(./assets/gallerybg.svg)`}
       minHeight="100vh"
+      w={"100%"}
+      overflowX={"hidden"}
     >
       <Flex
         borderBottom="2px solid #c08c34"
         bg="rgba(0,0,0, .5)"
-        mt="79px"
-        h="10vh"
+        minH="10vh"
+        py={"20px"}
         w="100vw"
         alignItems="center"
         color="white"
@@ -144,7 +140,7 @@ const Details = () => {
         <Button
           borderRadius="none"
           onClick={() => {
-            navigate("/gallery");
+            router.push("/gallery");
           }}
           marginLeft={[4, 4, 4, 10]}
           colorScheme="grey.700"
@@ -158,26 +154,26 @@ const Details = () => {
           <Text color="galleryGold">BACK</Text>
         </Button>
         <Text fontSize={["xl", "2xl", "3xl", "3xl"]} color="grey.500" mx={5}>
-          {location.state.name?.toUpperCase()}
+          {card?.properties?.name?.value.toUpperCase()}
         </Text>
         <Text
           fontSize="24px"
           color={
-            cardType === "gold"
+            card?.cardType === "gold"
               ? "gold"
-              : cardType === "iron"
+              : card?.cardType === "iron"
               ? "#CFE0EE"
-              : cardType === "wood"
+              : card?.cardType === "wood"
               ? "#C88943"
-              : cardType === "stone"
+              : card?.cardType === "stone"
               ? "#BDB8AD"
-              : cardType === "legendary"
+              : card?.cardType === "legendary"
               ? "#86DE5E"
               : "#c08c34"
           }
           mx={1}
         >
-          {cardType?.toUpperCase()}
+          {card?.cardType?.toUpperCase()}
         </Text>
       </Flex>
       <Box color="white">
@@ -197,7 +193,7 @@ const Details = () => {
                   marginBottom: "0px",
                   display: isCardFlipped ? "none" : "inline-block",
                 }}
-                src={location.state.imge}
+                src={card?.properties?.image?.value}
                 alt=""
               />
               <Image
@@ -211,8 +207,8 @@ const Details = () => {
                 alt=""
               />
             </Tilt>
-            <Box className="card-bottom" style={{ height: "3px" }}></Box>
-            {location?.state?.card.artist && (
+            <Box className="card-bottom mt-1" style={{ height: "3px" }}></Box>
+            {card?.artist && (
               <Text
                 fontSize="12px"
                 color="galleryGold"
@@ -224,9 +220,9 @@ const Details = () => {
                 <a
                   className="text-primary font-bold"
                   target="_blank"
-                  href={location.state.card.artist.link}
+                  href={card?.artist.link}
                 >
-                  {location.state.card.artist.name}
+                  {card?.artist.name}
                 </a>
               </Text>
             )}
@@ -255,19 +251,19 @@ const Details = () => {
             >
               <Flex px={4} w="50%" py={2} borderRight="1px solid #c08c34">
                 <Text>Name:</Text>
-                <Text ml={4}>{location.state.name}</Text>
+                <Text ml={4}>{card?.properties?.name?.value}</Text>
               </Flex>
 
               <Flex px={4} w="50%" py={2}>
                 <Text>ID:</Text>
-                <Text ml={4}>{location.state.id}</Text>
+                <Text ml={4}>{card?.properties?.id?.value}</Text>
               </Flex>
             </Flex>
             <Flex border="1px solid #c08c34" px={4} w="full" py={2}>
               <Text>Rarity:</Text>
               <Text ml={4}>
-                {location.state.card?.properties?.rarity
-                  ? location.state.card?.properties?.rarity?.value
+                {card?.properties?.name?.rarity
+                  ? card?.properties?.rarity?.value
                   : "N/A"}
               </Text>
             </Flex>
@@ -279,9 +275,7 @@ const Details = () => {
               py={2}
             >
               <Text>Element:</Text>
-              <Text ml={4}>
-                {location.state.card?.properties?.element?.value}
-              </Text>
+              <Text ml={4}>{card?.properties?.element?.value}</Text>
             </Flex>
             <Flex border="1px solid #c08c34" px={4} w="full" py={2}>
               <Flex w="50%" borderRight="1px solid #c08c34">
@@ -301,7 +295,7 @@ const Details = () => {
               py={2}
             >
               <Text>Race:</Text>
-              <Text ml={4}>{location.state.card?.properties?.race?.value}</Text>
+              <Text ml={4}>{card?.properties?.race?.value}</Text>
             </Flex>
             <Flex
               flexDir={["column", "column", "row", "row"]}
@@ -314,24 +308,22 @@ const Details = () => {
               <Flex>
                 <Text color="red">Attack(ATK):</Text>
                 <Text ml={4}>
-                  {location.state.card?.properties?.attack
-                    ? location.state.card?.properties?.attack?.value
+                  {card?.properties?.attack
+                    ? card?.properties?.attack?.value
                     : "N/A"}
                 </Text>
               </Flex>
               <Flex pl={[0, 0, 4, 4]}>
                 <Text color="green">Health (hp)</Text>
                 <Text ml={4}>
-                  {location.state.card?.properties?.hp
-                    ? location.state.card?.properties?.hp?.value
-                    : "N/A"}
+                  {card?.properties?.hp ? card?.properties?.hp?.value : "N/A"}
                 </Text>
               </Flex>
               <Flex pl={[0, 0, 4, 4]}>
                 <Text color="yellow">Gold Cost:</Text>
                 <Text ml={4}>
-                  {location?.state?.card?.properties?.gold
-                    ? location?.state?.card?.properties?.gold?.value
+                  {card?.properties?.gold
+                    ? card?.properties?.gold?.value
                     : "N/A"}
                 </Text>
               </Flex>
@@ -346,7 +338,7 @@ const Details = () => {
                 border="1px solid #c08c34"
               >
                 <Text textAlign="center">Card Description</Text>
-                <Text color="sm">{location.state.card?.description}</Text>
+                <Text color="sm">{card?.description}</Text>
               </Stack>
             </Flex>
           </Flex>
@@ -372,17 +364,7 @@ const Details = () => {
                     cursor="pointer"
                     key={item?.name}
                     onClick={() =>
-                      navigate("/gallery/detailpage", {
-                        state: {
-                          desc: item?.description,
-                          imge: item?.properties?.image?.value,
-                          ctype: cardType,
-                          name: item?.name,
-                          rarity: item?.properties?.rarity?.value,
-                          card: item,
-                          cardType: item.typeCard,
-                        },
-                      })
+                      router.push(`/card?id=${item?.properties?.id?.value}`)
                     }
                     objectFit="contain"
                     _hover={{
@@ -401,17 +383,9 @@ const Details = () => {
               <Flex w="full" justifyContent="center">
                 <Image
                   onClick={() =>
-                    navigate("/gallery/detailpage", {
-                      state: {
-                        desc: synergiesCards[0]?.description,
-                        imge: synergiesCards[0]?.properties?.image?.value,
-                        ctype: cardType,
-                        name: synergiesCards[0]?.name,
-                        rarity: synergiesCards[0]?.properties?.rarity?.value,
-                        card: synergiesCards[0],
-                        cardType: synergiesCards[0].typeCard,
-                      },
-                    })
+                    router.push(
+                      `/card?id=${synergiesCards[0]?.properties?.id?.value}`,
+                    )
                   }
                   cursor="pointer"
                   _hover={{
@@ -431,16 +405,9 @@ const Details = () => {
                 <Flex pos="relative" w="full" justifyContent="center">
                   <Image
                     onClick={() =>
-                      navigate("/gallery/detailpage", {
-                        state: {
-                          desc: synergiesCards[0]?.description,
-                          imge: synergiesCards[0]?.properties?.image?.value,
-                          ctype: cardType,
-                          name: synergiesCards[0]?.name,
-                          rarity: synergiesCards[0]?.properties?.rarity?.value,
-                          card: synergiesCards[0],
-                        },
-                      })
+                      router.push(
+                        `/card?id=${synergiesCards[0]?.properties?.id?.value}`,
+                      )
                     }
                     cursor="pointer"
                     _hover={{
@@ -456,16 +423,9 @@ const Details = () => {
                   />
                   <Image
                     onClick={() =>
-                      navigate("/gallery/detailpage", {
-                        state: {
-                          desc: synergiesCards[1]?.description,
-                          imge: synergiesCards[1]?.properties?.image?.value,
-                          ctype: cardType,
-                          name: synergiesCards[1]?.name,
-                          rarity: synergiesCards[1]?.properties?.rarity?.value,
-                          card: synergiesCards[1],
-                        },
-                      })
+                      router.push(
+                        `/card?id=${synergiesCards[1]?.properties?.id?.value}`,
+                      )
                     }
                     cursor="pointer"
                     _hover={{
@@ -487,17 +447,9 @@ const Details = () => {
                   >
                     <Image
                       onClick={() =>
-                        navigate("/gallery/detailpage", {
-                          state: {
-                            desc: synergiesCards[2]?.description,
-                            imge: synergiesCards[2]?.properties?.image?.value,
-                            ctype: cardType,
-                            name: synergiesCards[2]?.name,
-                            rarity:
-                              synergiesCards[2]?.properties?.rarity?.value,
-                            card: synergiesCards[2],
-                          },
-                        })
+                        router.push(
+                          `/card?id=${synergiesCards[2]?.properties?.id?.value}`,
+                        )
                       }
                       cursor="pointer"
                       _hover={{
