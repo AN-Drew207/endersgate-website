@@ -20,5 +20,5 @@ export const getTokensAllowedEth = () => {
 };
 
 export const mainExpected: () => boolean = () => {
-  return false;
+  return true;
 };

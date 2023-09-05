@@ -7,6 +7,8 @@ import Tilt from "react-parallax-tilt";
 import { MdOutlineLoop } from "react-icons/md";
 import { convertArrayCards } from "@/components/common/convertCards";
 import { useRouter, useSearchParams } from "next/navigation";
+import { getContractCustom, getContractMetamask } from "@/web3";
+import { getAddresses, mainExpected } from "@/components/common/getAddresses";
 
 const Details = () => {
   const [allCards, setAllCards] = useState([]);
@@ -14,16 +16,13 @@ const Details = () => {
   const [role, setRole] = useState("");
   const [isCardFlipped, setisCardFlipped] = useState(false);
   const [flippedCard, setFlippedCard] = useState("");
+  const [totalSupply, setTotalSupply] = useState(0);
   const router = useRouter();
   const search = useSearchParams();
 
   const card = convertArrayCards().find(
     (c) => c?.properties?.id?.value == search.get("id"),
   );
-
-  console.log(card);
-
-  console.log(synergiesCards);
 
   const cards = convertArrayCards();
 
@@ -47,11 +46,27 @@ const Details = () => {
 
   const findSynergies = () => {
     let arr: any = [];
-    card?.synergies.forEach((item: any) => {
+    card?.synergies?.forEach((item: any) => {
       console.log(cards.find((card) => card.name == item));
       arr.push(cards.find((card) => card.name == item));
     });
     setSynergiesCards(arr);
+  };
+
+  const getTotalSupply = async (id: any) => {
+    const {
+      matic: { endersGate },
+    } = getAddresses();
+    const contract = getContractCustom(
+      "EndersGate",
+      endersGate,
+      mainExpected()
+        ? "https://polygon-mainnet.g.alchemy.com/v2/kRM3PkCdafzPawH6DziNlah5olIrcNfl"
+        : "https://polygon-mumbai.g.alchemy.com/v2/Hwke9vGNdDbeQFI0s6-NRLNdGh34Phvb",
+    );
+    const totalSupply = await contract.methods.totalSupply(parseInt(id)).call();
+    console.log(totalSupply, id, "supply");
+    setTotalSupply(parseInt(totalSupply));
   };
 
   const changeIsCardFlipped = () => {
@@ -107,6 +122,12 @@ const Details = () => {
   useEffect(() => {
     findSynergies();
   }, [allCards, search.get("id")]);
+
+  useEffect(() => {
+    if (search.get("id")) {
+      getTotalSupply(search.get("id"));
+    }
+  }, [search.get("id")]);
 
   useEffect(() => {
     handleSetRole();
@@ -326,6 +347,10 @@ const Details = () => {
                     ? card?.properties?.gold?.value
                     : "N/A"}
                 </Text>
+              </Flex>
+              <Flex pl={[0, 0, 4, 4]}>
+                <Text color="pink">Total Supply:</Text>
+                <Text ml={4}>{totalSupply}</Text>
               </Flex>
             </Flex>
 
