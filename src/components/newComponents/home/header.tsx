@@ -120,7 +120,12 @@ function Header({ redirect }: any) {
           </Box>
 
           <Box mx="4" className="text-white font-bold text-lg">
-            <Link href="/packs">Packs</Link>
+            <a
+              target="_blank"
+              href="https://marketplace.endersgate.gg/pack_opening"
+            >
+              Packs
+            </a>
           </Box>
         </Flex>
       </Box>
