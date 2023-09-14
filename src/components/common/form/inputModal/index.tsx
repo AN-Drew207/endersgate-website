@@ -51,7 +51,7 @@ export const InputModal: React.FC<
                 )}
               >
                 {(showLabel || labelVisible) && title}
-                <span className="text-alert-error">*</span>
+                <span className="text-red-600"> *</span>
               </Typography>
             </div>
           )}

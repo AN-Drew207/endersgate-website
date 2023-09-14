@@ -85,6 +85,7 @@
     "react-tooltip": "^4.2.21",
     "react-waypoint": "^10.1.0",
     "react-zoom-pan-pinch": "^2.2.1",
+    "sass": "^1.66.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.0.7",
     "swiper": "^8.4.3",

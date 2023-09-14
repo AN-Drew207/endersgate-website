@@ -4,13 +4,13 @@ import "./Carousel.css";
 
 const cards = [1, 2, 3, 4, 5, 6, 7];
 const initialCardPositions = [
-  { translateX: -360, rotate: -45, zIndex: 1, size: "160px", translateY: 115 },
-  { translateX: -200, rotate: -30, zIndex: 2, size: "190px", translateY: 35 },
-  { translateX: -100, rotate: -15, zIndex: 3, size: "200px", translateY: 0 },
-  { translateX: 0, rotate: 0, zIndex: 4, size: "250px", translateY: 0 },
-  { translateX: 100, rotate: 15, zIndex: 3, size: "200px", translateY: 0 },
-  { translateX: 200, rotate: 30, zIndex: 2, size: "190px", translateY: 35 },
-  { translateX: 360, rotate: 45, zIndex: 1, size: "160px", translateY: 115 },
+  { translateX: -360, rotate: -45, zIndex: 1, size: "200px", translateY: 115 },
+  { translateX: -200, rotate: -30, zIndex: 2, size: "250px", translateY: 45 },
+  { translateX: -100, rotate: -15, zIndex: 3, size: "275px", translateY: 20 },
+  { translateX: 0, rotate: 0, zIndex: 4, size: "350px", translateY: 0 },
+  { translateX: 100, rotate: 15, zIndex: 3, size: "275px", translateY: 20 },
+  { translateX: 200, rotate: 30, zIndex: 2, size: "250px", translateY: 35 },
+  { translateX: 360, rotate: 45, zIndex: 1, size: "200px", translateY: 115 },
 ];
 
 function Carousel() {
@@ -114,7 +114,7 @@ function Carousel() {
           key={index}
           src={`./assets/cards/card${cards[index]}.webp`}
           alt={`Card ${index + 1}`}
-          className={`card ${position.zIndex === 4 ? "center" : ""}`}
+          className={`cardSlider ${position.zIndex === 4 ? "center" : ""}`}
           style={{
             transform: `translateX(${position.translateX}px) rotate(${position.rotate}deg) translateY(${position.translateY}px)`,
             zIndex: position.zIndex,

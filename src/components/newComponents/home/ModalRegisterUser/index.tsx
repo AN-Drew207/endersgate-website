@@ -38,7 +38,7 @@ export const useModalRegisterUser = () => {
           country,
           message,
         });
-        toast.success("Your registration was registered successfully");
+        toast.success("Your registration was successfully sent");
         hide();
       })
       .catch((error) => {

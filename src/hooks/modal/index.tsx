@@ -20,13 +20,13 @@ export const useModal = () => {
         <Dialog
           as="div"
           static
-          className="fixed inset-0 overflow-y-auto bg-[rgba(39, 39, 39, 0.514)]"
+          className="fixed inset-0 overflow-y-auto"
           style={{ zIndex: 1000 }}
           initialFocus={cancelButtonRef}
           open={isShow}
           onClose={hide}
         >
-          <div className="flex items-center justify-center pb-20 pt-4 min-h-screen text-center sm:block sm:p-0">
+          <div className="flex items-center justify-center pb-20 pt-4 min-h-screen text-center sm:block sm:p-0 ">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -36,7 +36,7 @@ export const useModal = () => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Overlay className="fixed inset-0 bg-transparent-45 transition-opacity" />
+              <Dialog.Overlay className="fixed inset-0 bg-[#000000] opacity-50" />
             </Transition.Child>
 
             {/* This element is to trick the browser into centering the modal contents. */}

@@ -18,7 +18,6 @@ const config: Config = {
   },
   colors: {
     ...colors,
-
     current: "currentColor",
     primary: "var(--color-primary)",
     "primary-disabled": "var(--color-primary-disabled)",

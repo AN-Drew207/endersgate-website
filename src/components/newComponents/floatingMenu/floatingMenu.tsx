@@ -23,7 +23,7 @@ function Navbar() {
 
   return (
     <div
-      className={`app_wrapper px-4.5 py-3 md:py-1 navbar-fixed ${
+      className={`app_wrapper lg:!w-[75%] !w-[90%] px-4.5 py-3 md:py-1 navbar-fixed ${
         crossedThreshold ? "crossed-threshold" : ""
       }`}
       style={{ height: "88px" }}
@@ -57,26 +57,26 @@ function Navbar() {
         </Link>
         <Link
           href="/shop"
-          className="menuItem py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
+          className="menuItem lg:text-[16px] text-sm py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
         >
           EG shops
         </Link>
         <Link
           href="/inventory"
-          className="menuItem py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
+          className="menuItem lg:text-[16px] text-sm py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
         >
           Inventory
         </Link>
         <a
           href="https://marketplace.endersgate.gg/pack_opening"
           target="_blank"
-          className="menuItem py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
+          className="menuItem lg:text-[16px] text-sm py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
         >
           My packs
         </a>
         <Link
           href="/gallery"
-          className="menuItem py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
+          className="menuItem lg:text-[16px] text-sm py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
         >
           Gallery
         </Link>
@@ -84,7 +84,7 @@ function Navbar() {
           href="https://solidity.finance/audits/EndersgateNFT/"
           target="_blank"
           rel="noopener noreferrer"
-          className="menuItem py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
+          className="menuItem lg:text-[16px] text-sm py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
         >
           Audit
         </a>
@@ -92,7 +92,7 @@ function Navbar() {
           href="https://marketplace.endersgate.gg/"
           target="_blank"
           rel="noopener noreferrer"
-          className="menuItem py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
+          className="menuItem lg:text-[16px] text-sm py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
         >
           Marketplace
         </a>
@@ -103,7 +103,9 @@ function Navbar() {
           className="menuItem play py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
         >
           <i className="fas fa-play"></i>
-          <span className="ml-2 hidden md:inline-block">Play now</span>
+          <span className="ml-2 lg:text-[16px] text-sm hidden md:inline-block">
+            Play now
+          </span>
         </a>
       </div>
     </div>

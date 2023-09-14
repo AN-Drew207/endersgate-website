@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="./favicon.ico" />
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
 
@@ -50,7 +50,7 @@ export default function RootLayout({
           name="description"
           content="Enders Gate is a Free to Play Web3 trading card game inspired by titles such as Yu-Gi-Oh, Magic The Gathering, and Hearthstone, Enders Gate players can collect, trade, and battle using their own prebuilt digital card decks unique to their play style."
         />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+        <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico" />
 
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 

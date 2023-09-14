@@ -7,7 +7,7 @@ const cards = [1, 2, 3, 4, 5, 6, 7];
 
 const HomeTop = () => {
   const [cardPositions, setCardPositions] = useState([]);
-  const [isMobile] = useMediaQuery("(max-width: 480px)");
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
   const carouselWidth = isMobile ? "100%" : "60%";
 
   useEffect(() => {

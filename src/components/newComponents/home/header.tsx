@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import {
   Flex,
@@ -20,13 +21,11 @@ import useMagicLink from "@/hooks/useMagicLink";
 import { LogoutOutlined } from "@ant-design/icons";
 import { onGetAssets } from "@/redux/nft_actions";
 import { useRouter } from "next/navigation";
+import { useModalUltraman } from "./ModalUltraman";
 
 function Header({ redirect }: any) {
   const { ethAddress: account } = useSelector(
     (state: any) => state.blockchain.user,
-  );
-  const { network, networkName } = useSelector(
-    (state: any) => state.blockchain,
   );
 
   const { account: user, provider } = useWeb3React();
@@ -38,6 +37,8 @@ function Header({ redirect }: any) {
   const { login } = useMagicLink(mainExpected() ? 137 : 80001);
 
   const dispatch = useDispatch();
+
+  const { ModalUltraman, show } = useModalUltraman();
 
   React.useEffect(() => {
     if (user) dispatch(onGetAssets(user));
@@ -51,7 +52,6 @@ function Header({ redirect }: any) {
           email: "",
           provider: provider?.provider,
           providerName: "web3react",
-          // ownsBattlePass: balance > 0,
         } as any),
       );
     }
@@ -93,6 +93,7 @@ function Header({ redirect }: any) {
       py="4"
       px={["4", "8"]}
     >
+      {ModalUltraman}
       <Box display="flex" alignItems="center">
         <Link href="/">
           <Image
@@ -111,14 +112,9 @@ function Header({ redirect }: any) {
           <Box mx="4" className="text-white font-bold text-lg">
             <Link href="/shop">Shop</Link>
           </Box>
-          {/* 
-          <Box mx="4" className="text-white font-bold text-lg">
-            <Link href="/comics">Comics</Link>
-          </Box> */}
           <Box mx="4" className="text-white font-bold text-lg">
             <Link href="/competitive">Stats</Link>
           </Box>
-
           <Box mx="4" className="text-white font-bold text-lg">
             <a
               target="_blank"
@@ -131,6 +127,15 @@ function Header({ redirect }: any) {
       </Box>
 
       <Flex display={["none", "none", "flex"]} alignItems="center">
+        <Box
+          mx="4"
+          className="text-white font-bold text-lg cursor-pointer"
+          onClick={() => {
+            show();
+          }}
+        >
+          <img src="/images/um_btn_navbar.webp" className="h-16" alt="" />
+        </Box>
         {!account ? (
           <Box mx="4" className="text-white font-bold text-lg">
             <Link
@@ -186,9 +191,6 @@ function Header({ redirect }: any) {
             <MenuItem className="text-white font-bold text-lg">
               <Link href="/shop">Shop</Link>
             </MenuItem>
-            {/* <MenuItem className="text-white font-bold text-lg">
-              <Link href="/comics">Comics</Link>
-            </MenuItem> */}
             <MenuItem className="text-white font-bold text-lg">
               <Link href="/competitive">Stats</Link>
             </MenuItem>
@@ -197,6 +199,14 @@ function Header({ redirect }: any) {
             </MenuItem>
             <MenuItem className="text-white font-bold text-lg">
               <Link href="/#social">Social</Link>
+            </MenuItem>
+            <MenuItem
+              className="text-white font-bold text-lg cursor-pointer"
+              onClick={() => {
+                show();
+              }}
+            >
+              Ultraman whitelist!
             </MenuItem>
 
             {!account ? (
