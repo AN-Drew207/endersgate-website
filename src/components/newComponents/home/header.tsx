@@ -90,7 +90,7 @@ function Header({ redirect }: any) {
       bg="black"
       justifyContent="space-between"
       alignItems="center"
-      py="4"
+      py="1"
       px={["4", "8"]}
     >
       {ModalUltraman}
@@ -134,7 +134,7 @@ function Header({ redirect }: any) {
             show();
           }}
         >
-          <img src="/images/um_btn_navbar.webp" className="h-16" alt="" />
+          <img src="/images/um_btn_navbar.webp" className="h-14" alt="um" />
         </Box>
         {!account ? (
           <Box mx="4" className="text-white font-bold text-lg">
