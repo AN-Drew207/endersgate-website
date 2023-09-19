@@ -90,7 +90,7 @@ function Header({ redirect }: any) {
       bg="black"
       justifyContent="space-between"
       alignItems="center"
-      py="1"
+      py="4"
       px={["4", "8"]}
     >
       {/* {ModalUltraman} */}
