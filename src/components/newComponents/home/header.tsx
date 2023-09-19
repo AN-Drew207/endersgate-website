@@ -38,7 +38,7 @@ function Header({ redirect }: any) {
 
   const dispatch = useDispatch();
 
-  const { ModalUltraman, show } = useModalUltraman();
+  // const { ModalUltraman, show } = useModalUltraman();
 
   React.useEffect(() => {
     if (user) dispatch(onGetAssets(user));
@@ -93,7 +93,7 @@ function Header({ redirect }: any) {
       py="1"
       px={["4", "8"]}
     >
-      {ModalUltraman}
+      {/* {ModalUltraman} */}
       <Box display="flex" alignItems="center">
         <Link href="/">
           <Image
