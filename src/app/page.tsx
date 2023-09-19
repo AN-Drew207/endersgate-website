@@ -9,20 +9,20 @@ import HomeTop from "@/components/newComponents/carosel/HomeTop";
 import { useModalUltraman } from "@/components/newComponents/home/ModalUltraman";
 
 function LandingPage() {
-  const { ModalUltraman, show } = useModalUltraman();
+  // const { ModalUltraman, show } = useModalUltraman();
   return (
     <>
-      {ModalUltraman}
+      {/* {ModalUltraman} */}
       <Navbar />
       <div className="flex flex-col relative">
-        <img
+        {/* <img
           src="/images/um_btn_fixed.webp"
           className="fixed sm:left-8 left-2 top-40 md:w-72 w-40 z-[1000] cursor-pointer"
           alt="Ultraman"
           onClick={() => {
             show();
           }}
-        />
+        /> */}
 
         <HomeTop />
         <Table />

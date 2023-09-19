@@ -127,7 +127,7 @@ function Header({ redirect }: any) {
       </Box>
 
       <Flex display={["none", "none", "flex"]} alignItems="center">
-        <Box
+        {/* <Box
           mx="4"
           className="text-white font-bold text-lg cursor-pointer"
           onClick={() => {
@@ -135,7 +135,7 @@ function Header({ redirect }: any) {
           }}
         >
           <img src="/images/um_btn_navbar.webp" className="h-14" alt="um" />
-        </Box>
+        </Box> */}
         {!account ? (
           <Box mx="4" className="text-white font-bold text-lg">
             <Link
@@ -200,14 +200,14 @@ function Header({ redirect }: any) {
             <MenuItem className="text-white font-bold text-lg">
               <Link href="/#social">Social</Link>
             </MenuItem>
-            <MenuItem
+            {/* <MenuItem
               className="text-white font-bold text-lg cursor-pointer"
               onClick={() => {
                 show();
               }}
             >
               Ultraman whitelist!
-            </MenuItem>
+            </MenuItem> */}
 
             {!account ? (
               <MenuItem className="text-white font-bold text-lg">
