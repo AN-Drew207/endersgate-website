@@ -159,7 +159,7 @@ const TermsAndConditions = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-[#171717] py-16 2xl:px-48 xl:px-44 md:px-40 sm:px-28 px-2 flex flex-col items-center justify-center">
+    <div className="bg-[#010101] py-16 2xl:px-48 xl:px-44 md:px-40 sm:px-28 px-2 flex flex-col items-center justify-center">
       <div className="flex flex-col md:w-2/3 sm:w-4/5 w-full items-center justify-center">
         <img src="/assets/5headgames.svg" className="h-24 mb-10" alt="" />
         <h1 className="text-white text-5xl text-center mb-10" id="topLegal">
