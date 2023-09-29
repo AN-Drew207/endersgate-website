@@ -1,56 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import "./footer.css";
+import Partners from "./partners";
 
 function Footer() {
   return (
     <>
-      <div
-        className="w-full h-264px bg-black   flex flex-col justify-center items-center"
-        id="social"
-      >
-        <div className="h-156px w-full md:w-1283px flex flex-col justify-center items-center">
-          <p className="font-inter font-bold   text-white mb-6 mt-5 project-text">
-            Our Partners:
-          </p>
-          <div className="flex justify-center items-center space-x-10px flex-wrap project-container">
-            <a
-              href="https://polygon.technology/"
-              target="_blank"
-              className="mr-5 mb-4 md:mb-5 projects cursor-pointer"
-            >
-              <img
-                src={"./assets/logos/Polygon logo.png"}
-                alt="Image 1"
-                className="h-78px w-254px rounded-8px project-poly"
-              />
-            </a>
-            <a
-              href="https://dappradar.com/"
-              target="_blank"
-              className="mr-5 mb-4 md:mb-5 projects cursor-pointer"
-            >
-              <img
-                src={"./assets/logos/Dapp radar logo.png"}
-                alt="Image 2"
-                className="h-78px w-278px rounded-8px project-dapp"
-              />
-            </a>
-            <a
-              href="https://chain.link/"
-              target="_blank"
-              className="mr-5 mb-4 md:mb-5 projects cursor-pointer"
-            >
-              <img
-                src={"./assets/logos/Chainlink logo.png"}
-                alt="Image 3"
-                className="h-78px w-309px rounded-8px project-chain"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-
+      <Partners />
       <div className="w-full h-[264px] bg-black   flex flex-col justify-center items-center">
         <div className="h-[156px] w-full md:w-1283px flex flex-col justify-center items-center">
           <p className="font-inter font-bold  text-white mb-6 mt-5 project-text">
@@ -180,11 +136,10 @@ function Footer() {
           </div>
         </div>
       </div>
-
       <div className="flex flex-col bg-black text-gray-300 py-8 items-center">
         {/* Language Changer */}
         <div className="mb-4">
-          <div className="mb-4 w-16">
+          <div className="mb-4 w-32">
             <img
               src={"./assets/logos/language.png"}
               alt="Language logo"

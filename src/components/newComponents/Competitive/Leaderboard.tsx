@@ -16,8 +16,10 @@ endDate -= hours * 3600;
 function nextDate(dayIndex: any) {
   var today: any = new Date();
   today.setDate(
-    today.getDate() + ((dayIndex - 1 - today.getDay() + 7) % 7) + 1,
+    today.getDate() + ((dayIndex - 1 - today.getDay() + 7) % 10) + 1,
   );
+  console.log(today, "next");
+
   return today;
 }
 
@@ -26,13 +28,14 @@ function lastDate(dayIndex: any) {
   today.setDate(
     today.getDate() + ((dayIndex - 1 - today.getDay() - 7) % 7) + 1,
   );
+  console.log(today, "previous");
   return today;
 }
 
 function secondToLastDate(dayIndex: any) {
   var today = new Date();
   today.setDate(
-    today.getDate() + ((dayIndex - 1 - today.getDay() - 7) % 7) + 1,
+    today.getDate() + ((dayIndex - 1 - today.getDay() - 7) % 14) + 1,
   );
   return today;
 }
@@ -57,7 +60,7 @@ export const Leaderboard = ({ setLastWinners }: any) => {
     ]);
 
     const realData = data
-      .map((user: any) => {
+      ?.map((user: any) => {
         return {
           ...user,
           histories: user.histories.filter(
@@ -86,23 +89,27 @@ export const Leaderboard = ({ setLastWinners }: any) => {
           }
         }
         return { ...user, wins: wins, losses: losses, points: points };
-      });
+      })
+      .sort((a: any, b: any) => b.points - a.points)
+      .filter((user: any, i: any) => i < 25);
 
     const lastWinners = data
-      .map((user: any) => {
+      ?.map((user: any) => {
         return {
           ...user,
-          histories: user.histories.filter(
-            (game: any) =>
+          histories: user.histories.filter((game: any) => {
+            return (
               game.finish_time < lastDate(0) &&
-              game.finish_time > secondToLastDate(0),
-          ),
+              game.finish_time > secondToLastDate(0)
+            );
+          }),
         };
       })
       .map((user: any) => {
         let wins = 0,
           losses = 0,
           points = 0;
+        if (user.histories.length > 0) console.log(user.histories, "histories");
         for (let i = 0; i < user.histories.length; i++) {
           let game_result_expected = -1;
           if (user.histories[i].player1 == user.id) {
@@ -117,11 +124,13 @@ export const Leaderboard = ({ setLastWinners }: any) => {
             losses++;
             points += gameSettings.gameSetting.DuelPointDecrease;
           }
+          console.log(points);
         }
         return { ...user, wins: wins, losses: losses, points: points };
       })
       .sort((a: any, b: any) => b.points - a.points)
       .filter((user: any, i: any) => i < 3);
+
     setData(realData);
     setLastWinners(lastWinners);
   };
