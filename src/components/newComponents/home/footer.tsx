@@ -180,8 +180,6 @@ function Footer() {
         <div className="mb-8 text-gray-500 text-center">
           <p className="font-bold text-lg mb-2">
             Entertainment for Digital Collectors.
-            <br />
-            5headgames.com
           </p>
           <p className="text-sm text-gray-500">
             ©2023 5HEADGAMES, INC. ALL RIGHTS RESERVED. <br />

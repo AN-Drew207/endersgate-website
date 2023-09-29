@@ -181,20 +181,24 @@ function LandingPage() {
             <Flex flexDir="column" alignItems="center">
               <Flex
                 w={["90%", "80%"]}
-                h={["auto", "300px"]}
+                h={["auto", "auto", "300px"]}
+                display="flex"
+                flexDirection={["column", "column", "row"]}
                 justifyContent="space-between"
+                alignItems={"center"}
                 bg="black"
                 p="6"
                 my="4"
+                gap={4}
                 borderRadius="lg"
                 mx={[0, "100px"]}
                 mb="-20px"
                 border="1px solid #626262"
               >
                 <Box
-                  w={["100%", "50%"]}
+                  w={["100%", "100%", "50%"]}
                   display="flex"
-                  flexDirection="column"
+                  flexDirection={["column"]}
                   justifyContent="center"
                   px="4"
                   mr={[0, 4]}
@@ -205,7 +209,7 @@ function LandingPage() {
                     color="white"
                     fontFamily="Inter"
                     textShadow="0px 4px 10px #000000"
-                    textAlign={["center", "left"]}
+                    textAlign={["center", "center", "left"]}
                   >
                     POWERED BY POLYGON!
                   </Text>
@@ -215,7 +219,7 @@ function LandingPage() {
                     fontFamily="Inter"
                     textShadow="0px 4px 10px #000000"
                     mt="2"
-                    textAlign={["center", "left"]}
+                    textAlign={["center", "center", "left"]}
                   >
                     We are proud to say Enders Gate is now officially partnered
                     with Polygon! Access Enders Gate TCG on MATIC.
@@ -238,18 +242,21 @@ function LandingPage() {
               </Flex>
               <Flex
                 w={["90%", "80%"]}
-                h={["auto", "300px"]}
+                h={["auto", "auto", "300px"]}
                 justifyContent="space-between"
+                alignItems={"center"}
+                flexDirection={["column", "column", "row"]}
                 bg="black"
                 p="6"
                 my="4"
+                gap={4}
                 borderRadius="lg"
                 mx={[0, "100px"]}
                 border="1px solid #626262"
                 mt="40px"
               >
                 <Box
-                  w={["100%", "50%"]}
+                  w={["100%", "100%", "50%"]}
                   display="flex"
                   flexDirection="column"
                   justifyContent="center"
@@ -262,7 +269,7 @@ function LandingPage() {
                     color="white"
                     fontFamily="Inter"
                     textShadow="0px 4px 10px #000000"
-                    textAlign={["center", "left"]}
+                    textAlign={["center", "center", "left"]}
                   >
                     JOIN OUR COMMUNITY!
                   </Text>
@@ -272,11 +279,11 @@ function LandingPage() {
                     fontFamily="Inter"
                     textShadow="0px 4px 10px #000000"
                     mt="2"
-                    textAlign={["center", "left"]}
+                    textAlign={["center", "center", "left"]}
                   >
                     Find out more about Enders Gate, join community events,
                     giveaways, airdrops and more! Click the link below to join
-                    Ender Gate Discord server..
+                    Ender Gate Discord server.
                   </Text>
                 </Box>
                 <Box

@@ -7,7 +7,10 @@ const Partners = () => {
     { logo: "/icons/Chainlink.svg", link: "https://chain.link/" },
     { logo: "/icons/Chainstack.svg", link: "https://chainstack.com/" },
     { logo: "/icons/DappRadar.svg", link: "https://dappradar.com/" },
-    { logo: "/icons/tsuburaya_logo.png", link: "https://xp.network/" },
+    {
+      logo: "/icons/Tsuburaya_Logo_Blue.png",
+      link: "https://tsuburaya-prod.com/",
+    },
     { logo: "/icons/PolygonLogo.svg", link: "https://polygon.technology/" },
     { logo: "/icons/XP.Network.svg", link: "https://xp.network/" },
     { logo: "/icons/magic-link.png", link: "https://magic.link/" },
