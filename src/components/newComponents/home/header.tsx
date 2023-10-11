@@ -6,6 +6,7 @@ import {
   Button,
   Image,
   Menu,
+  Link as LinkChakra,
   MenuButton,
   MenuList,
   MenuItem,
@@ -138,13 +139,11 @@ function Header({ redirect }: any) {
         </Box> */}
         {!account ? (
           <Box mx="4" className="text-white font-bold text-lg">
-            <Link
-              href={`/login${
-                redirect ? `?redirect=true&redirectAddress=${redirect}` : ""
-              }`}
+            <LinkChakra
+              href={`https://marketplace.endersgate.gg/login?redirect=true&redirectAddress=/`}
             >
               Login
-            </Link>
+            </LinkChakra>
           </Box>
         ) : (
           <React.Fragment>
@@ -211,13 +210,11 @@ function Header({ redirect }: any) {
 
             {!account ? (
               <MenuItem className="text-white font-bold text-lg">
-                <Link
-                  href={`/login${
-                    redirect ? `?redirect=true&redirectAddress=${redirect}` : ""
-                  }`}
+                <LinkChakra
+                  href={`https://marketplace.endersgate.gg/login?redirect=true&redirectAddress=/`}
                 >
                   Login
-                </Link>
+                </LinkChakra>
               </MenuItem>
             ) : (
               <>
