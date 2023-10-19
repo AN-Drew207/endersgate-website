@@ -100,6 +100,21 @@ export const useModalUltraman = () => {
             ></InputModal>
             <InputModal
               type="text"
+              title="Wallet Address"
+              placeholder="Your Wallet Address"
+              name="wallet"
+              register={register}
+              labelVisible
+              rules={{
+                required: { message: "This field is required", value: true },
+                pattern: {
+                  message: "Your addres has to be valid",
+                  value: /^0x[a-fA-F0-9]{40}$/g,
+                },
+              }}
+            ></InputModal>
+            <InputModal
+              type="text"
               title="Do you have additional comments or questions? (We will contact you with an answer)"
               placeholder="Short text"
               name="message"

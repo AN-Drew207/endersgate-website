@@ -137,43 +137,6 @@ function Header({ redirect }: any) {
         >
           <img src="/images/um_btn_navbar.webp" className="h-14" alt="um" />
         </Box>
-        {!account ? (
-          <Box mx="4" className="text-white font-bold text-lg">
-            <LinkChakra
-              href={`https://marketplace.endersgate.gg/login?redirect=true&redirectAddress=/`}
-            >
-              Login
-            </LinkChakra>
-          </Box>
-        ) : (
-          <React.Fragment>
-            <Box mx="4" className="text-white font-bold text-lg">
-              <Link href="/inventory">My Account</Link>
-            </Box>
-            <Box
-              mx="2"
-              className="text-white font-bold flex items-center justify-center"
-              onClick={() => {
-                dispatch(
-                  onUpdateUser({
-                    ethAddress: "",
-                    email: "",
-                    provider: "",
-                    providerName: "",
-                    ownsBattlePass: false,
-                  } as any),
-                );
-                localStorage.removeItem("typeOfConnection");
-                localStorage.removeItem("loginTime");
-                if (redirect !== "/") {
-                  router.push("/");
-                }
-              }}
-            >
-              <LogoutOutlined className="text-md text-white cursor-pointer" />
-            </Box>
-          </React.Fragment>
-        )}
       </Flex>
 
       <Box display={["flex", "flex", "none"]}>
@@ -207,31 +170,6 @@ function Header({ redirect }: any) {
             >
               Ultraman whitelist!
             </MenuItem>
-
-            {!account ? (
-              <MenuItem className="text-white font-bold text-lg">
-                <LinkChakra
-                  href={`https://marketplace.endersgate.gg/login?redirect=true&redirectAddress=/`}
-                >
-                  Login
-                </LinkChakra>
-              </MenuItem>
-            ) : (
-              <>
-                <MenuItem className="text-white font-bold text-lg">
-                  <Link href="/inventory">My Account</Link>
-                </MenuItem>
-                <MenuItem
-                  className="text-black font-bold text-lg"
-                  onClick={() => {
-                    localStorage.removeItem("typeOfConnection");
-                    localStorage.removeItem("loginTime");
-                  }}
-                >
-                  Logout
-                </MenuItem>
-              </>
-            )}
           </MenuList>
         </Menu>
       </Box>
