@@ -11,6 +11,7 @@ import Web3Provider from "@/components/Web3Provider";
 import Header from "@/components/newComponents/home/header";
 import { initializeApp } from "firebase/app";
 import { ToastProvider } from "react-toast-notifications";
+import { Toaster } from "react-hot-toast";
 
 export default function RootLayout({
   children,
@@ -115,6 +116,7 @@ export default function RootLayout({
             <Web3Provider>
               <ChakraProvider theme={theme}>
                 <Header /> {children}
+                <Toaster />
               </ChakraProvider>
             </Web3Provider>
           </ToastProvider>
