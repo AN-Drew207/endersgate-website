@@ -78,6 +78,7 @@ export const useModalUltraman = () => {
             If you have any question, please go to our{" "}
             <a
               href="https://endersgate.gitbook.io/endersgate/welcome/5hg-faq"
+              target="_blank"
               className="text-center font-bold text-white cursor-pointer border-none outline-none"
             >
               FAQs
