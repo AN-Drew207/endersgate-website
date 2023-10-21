@@ -74,6 +74,15 @@ export const useModalUltraman = () => {
             Fill out the form below to join the waitlist and receive more
             information about the limited drop.
           </p>
+          <p className="text-center text-white text-[16px] py-2">
+            If you have any question, please go to our{" "}
+            <a
+              href="https://endersgate.gitbook.io/endersgate/welcome/5hg-faq"
+              className="text-center font-bold text-white cursor-pointer border-none outline-none"
+            >
+              FAQs
+            </a>
+          </p>
           <p className="text-[#47e439] font-bold text-lg">SIGN UP BELOW!</p>
           <div className="flex flex-col items-center justify-center gap-5">
             <InputModal
