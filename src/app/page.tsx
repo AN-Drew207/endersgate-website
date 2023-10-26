@@ -68,7 +68,6 @@ function LandingPage() {
               textShadow="0px 4px 10px #000000"
               mb={[4, 0]}
               mr={[0, 8]}
-              as={"h1"}
             >
               Play for Free. Own what you earn
             </Text>

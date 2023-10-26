@@ -762,7 +762,7 @@ const MobileCardType = ({
           justifyContent="center"
           alignItems="center"
         >
-          <Image w="50%" src={"./assets/woodfilter.svg"} />
+          <Image w="50%" src={"./assets/woodfilter.svg"} alt="wood_filter" />
         </Flex>
         <Flex
           onClick={() => handleCardsFilterChange("silver")}
@@ -778,7 +778,11 @@ const MobileCardType = ({
           justifyContent="center"
           alignItems="center"
         >
-          <Image w="50%" src={"./assets/silverfilter.svg"} />
+          <Image
+            w="50%"
+            src={"./assets/silverfilter.svg"}
+            alt="silver_filter"
+          />
         </Flex>
         <Flex
           onClick={() => handleCardsFilterChange("iron")}
@@ -794,7 +798,7 @@ const MobileCardType = ({
           justifyContent="center"
           alignItems="center"
         >
-          <Image w="50%" src={"./assets/ironfilter.svg"} />
+          <Image w="50%" src={"./assets/ironfilter.svg"} alt="iron_filter" />
         </Flex>
         <Flex
           onClick={() => handleCardsFilterChange("gold")}
@@ -810,7 +814,7 @@ const MobileCardType = ({
           justifyContent="center"
           alignItems="center"
         >
-          <Image w="50%" src={"./assets/goldfilter.svg"} />
+          <Image w="50%" src={"./assets/goldfilter.svg"} alt="gold_filter" />
         </Flex>
         <Flex
           onClick={() => handleCardsFilterChange("legend")}
@@ -826,7 +830,11 @@ const MobileCardType = ({
           justifyContent="center"
           alignItems="center"
         >
-          <Image w="50%" src={"./assets/legendfilter.svg"} />
+          <Image
+            w="50%"
+            src={"./assets/legendfilter.svg"}
+            alt="legend_filter"
+          />
         </Flex>
       </Flex>
       <Flex>

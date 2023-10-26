@@ -20,6 +20,7 @@ const Heading = ({ connected, connectWallet }: any) => {
         color="white"
         fontSize={["3xl", "3xl", "4xl", "5xl"]}
         fontWeight="semibold"
+        as="h1"
       >
         CARD GALLERY
       </Text>
