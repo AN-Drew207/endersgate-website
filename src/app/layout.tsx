@@ -63,7 +63,7 @@ export default function RootLayout({
 
         <meta
           name="description"
-          content="Enders Gate is a Free to Play Web3 trading card game inspired by titles such as Yu-Gi-Oh, Magic The Gathering, and Hearthstone, Enders Gate players can collect, trade, and battle using their own prebuilt digital card decks unique to their play style."
+          content="Enders Gate: Free-to-play Web3 trading card game inspired by Yu-Gi-Oh, Magic, and Hearthstone. Collect, trade, and battle with unique digital card decks."
         />
         <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico" />
 
@@ -75,10 +75,6 @@ export default function RootLayout({
         />
         <title>Enders Gate - Web3 Trading Card Game</title>
         <meta name="title" content="Enders Gate - Web3 Trading Card Game" />
-        <meta
-          name="description"
-          content="Enders Gate is a Free to Play Web3 trading card game inspired by titles such as Yu-Gi-Oh, Magic The Gathering, and Hearthstone, Enders Gate players can collect, trade, and battle using their own prebuilt digital card decks unique to their play style."
-        />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://endersgate.gg/" />
@@ -88,7 +84,7 @@ export default function RootLayout({
         />
         <meta
           property="og:description"
-          content="Enders Gate is a Free to Play Web3 trading card game inspired by titles such as Yu-Gi-Oh, Magic The Gathering, and Hearthstone, Enders Gate players can collect, trade, and battle using their own prebuilt digital card decks unique to their play style."
+          content="Enders Gate: Free-to-play Web3 trading card game inspired by Yu-Gi-Oh, Magic, and Hearthstone. Collect, trade, and battle with unique digital card decks."
         />
         <meta
           property="og:image"
@@ -103,12 +99,13 @@ export default function RootLayout({
         />
         <meta
           property="twitter:description"
-          content="Enders Gate is a Free to Play Web3 trading card game inspired by titles such as Yu-Gi-Oh, Magic The Gathering, and Hearthstone, Enders Gate players can collect, trade, and battle using their own prebuilt digital card decks unique to their play style."
+          content="Enders Gate: Free-to-play Web3 trading card game inspired by Yu-Gi-Oh, Magic, and Hearthstone. Collect, trade, and battle with unique digital card decks."
         />
         <meta
           property="twitter:image"
           content="https://endersgate.net/endersgate.gif"
         />
+        <link rel="canonical" href="https://www.endersgate.gg/" />
       </head>
       <body className={"flex flex-col w-full"}>
         <Provider store={store}>

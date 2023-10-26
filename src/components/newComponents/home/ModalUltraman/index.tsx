@@ -67,9 +67,9 @@ export const useModalUltraman = () => {
           className="flex flex-col items-center justify-center relative rounded-full px-4 pb-8 gap-2"
           onSubmit={handleSubmit(handleSubmitModal)}
         >
-          <h2 className="text-white text-center font-bold text-2xl text-red-alert">
+          <h1 className="text-white text-center font-bold text-2xl text-red-alert">
             Join the Waitlist for an Exclusive Drop Featuring: Anime Ultraman
-          </h2>{" "}
+          </h1>{" "}
           <p className="text-center text-white text-[16px] py-2">
             Fill out the form below to join the waitlist and receive more
             information about the limited drop.

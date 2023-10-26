@@ -156,6 +156,7 @@ const HomeTop = () => {
             textShadow="0px 4px 10px #000000"
             mb="20px"
             mr="8px"
+            as={"h1"}
           >
             Play for Free.
             <br /> Own what you earn
