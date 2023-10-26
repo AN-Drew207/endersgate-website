@@ -91,7 +91,7 @@ function Header({ redirect }: any) {
       bg="black"
       justifyContent="space-between"
       alignItems="center"
-      py="4"
+      py="1"
       px={["4", "8"]}
     >
       {ModalUltraman}
@@ -111,10 +111,17 @@ function Header({ redirect }: any) {
             </a>
           </Box>
           <Box mx="4" className="text-white font-bold text-lg">
-            <Link href="/shop">Shop</Link>
+            <a href="https://marketplace.endersgate.gg/shop" target="_blank">
+              Shop
+            </a>
           </Box>
           <Box mx="4" className="text-white font-bold text-lg">
-            <Link href="/competitive">Stats</Link>
+            <a
+              href="https://marketplace.endersgate.gg/competitive"
+              target="_blank"
+            >
+              Stats
+            </a>
           </Box>
           <Box mx="4" className="text-white font-bold text-lg">
             <a
@@ -151,10 +158,17 @@ function Header({ redirect }: any) {
           </MenuButton>
           <MenuList zIndex={10000}>
             <MenuItem className="text-white font-bold text-lg">
-              <Link href="/shop">Shop</Link>
+              <a href="https://marketplace.endersgate.gg/shop" target="_blank">
+                Shop
+              </a>
             </MenuItem>
             <MenuItem className="text-white font-bold text-lg">
-              <Link href="/competitive">Stats</Link>
+              <a
+                href="https://marketplace.endersgate.gg/competitive"
+                target="_blank"
+              >
+                Stats
+              </a>
             </MenuItem>
             <MenuItem className="text-white font-bold text-lg">
               <Link href="/gallery">Gallery</Link>

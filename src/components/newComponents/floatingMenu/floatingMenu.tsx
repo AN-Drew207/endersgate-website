@@ -55,18 +55,20 @@ function Navbar() {
             style={{ height: "25px", width: "100px" }}
           />
         </Link>
-        <Link
-          href="/shop"
+        <a
+          href="https://marketplace.endersgate.gg/shop"
+          target="_blank"
           className="menuItem lg:text-[16px] text-sm py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
         >
           EG shops
-        </Link>
-        <Link
-          href="/inventory"
+        </a>
+        <a
+          href="https://marketplace.endersgate.gg/login"
+          target="_blank"
           className="menuItem lg:text-[16px] text-sm py-1.5 px-2 uppercase font-bold border-gray-600 transition duration-200 hover:bg-gray-700 flex-1 text-center"
         >
           Inventory
-        </Link>
+        </a>
         <a
           href="https://marketplace.endersgate.gg/pack_opening"
           target="_blank"
