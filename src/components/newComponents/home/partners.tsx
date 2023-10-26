@@ -6,7 +6,7 @@ const Partners = () => {
     { logo: "/icons/Findora_Logo.svg", link: "https://findora.org/" },
     { logo: "/icons/Chainlink.svg", link: "https://chain.link/" },
     { logo: "/icons/Chainstack.svg", link: "https://chainstack.com/" },
-    { logo: "/icons/DappRadar.svg", link: "https://dappradar.com/" },
+    { logo: "/icons/DappRadar.svg", link: "https://twitter.com/DappRadar" },
     {
       logo: "/icons/Tsuburaya_Logo_Blue.png",
       link: "https://tsuburaya-prod.com/",

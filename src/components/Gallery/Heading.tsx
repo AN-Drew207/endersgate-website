@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
 import clsx from "clsx";
@@ -61,6 +62,7 @@ const Heading = ({ connected, connectWallet }: any) => {
               ? "./assets/WALLET_CONNECTED.png"
               : "./assets/CONNECT_WALLET.png"
           }
+          alt="wallet_button"
           onClick={connected ? undefined : connectWallet}
         />
       </div>
