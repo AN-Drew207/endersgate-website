@@ -1,4 +1,5 @@
 "use client";
+import "@/styles/App.scss";
 import "@/styles/globals.css";
 import "@/styles/global-tailwind.css";
 import React from "react";
