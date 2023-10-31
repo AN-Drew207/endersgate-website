@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React from "react";
@@ -60,7 +61,7 @@ function LandingPage() {
             </Text>
             <Text
               color="white"
-              fontSize={["12px", "28px"]}
+              fontSize={["12px", "20px"]}
               fontFamily="Inter"
               fontWeight="300"
               textAlign="center"
@@ -69,7 +70,10 @@ function LandingPage() {
             >
               Enders Gate is a Free to Play trading card game. Players can
               collect, trade, and battle using custom card decks made of up to
-              30 digital cards.
+              230 digital cards. Enders Gate offers a dynamic and engaging
+              community where players can connect, exchange strategies, and
+              participate in tournaments and events. Join our passionate player
+              base as you explore the ever-expanding universe of Enders Gate.
             </Text>
           </Box>
 
@@ -209,7 +213,9 @@ function LandingPage() {
                     textAlign={["center", "center", "left"]}
                   >
                     We are proud to say Enders Gate is now officially partnered
-                    with Polygon! Access Enders Gate TCG on MATIC.
+                    with Polygon! Access Enders Gate TCG on the MATIC network.
+                    Enjoy an enhanced blockchain gaming experience with seamless
+                    transactions and security.
                   </Text>
                 </Box>
                 <Box
@@ -268,9 +274,11 @@ function LandingPage() {
                     mt="2"
                     textAlign={["center", "center", "left"]}
                   >
-                    Find out more about Enders Gate, join community events,
-                    giveaways, airdrops and more! Click the link below to join
-                    Ender Gate Discord server.
+                    Discover the latest updates, engage with fellow enthusiasts,
+                    and stay tuned for exclusive content. Join us on the Enders
+                    Gate Discord server, where adventure awaits at every turn.
+                    Don't miss out on the opportunity to be part of our thriving
+                    community!
                   </Text>
                 </Box>
                 <Box
