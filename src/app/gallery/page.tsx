@@ -321,9 +321,7 @@ const Gallery = () => {
     }
   };
 
-  const login = () => {
-    router.push("/login");
-  };
+  const login = () => {};
 
   const connectWallet = async () => {
     // setIsLoading(true);

@@ -58,6 +58,7 @@
     "hoist-non-react-statics": "^3.3.2",
     "magic-sdk": "^19.3.0",
     "next": "13.4.19",
+    "next-sitemap": "^4.2.3",
     "patch-package": "^6.4.7",
     "postcss": "8.4.28",
     "react": "18.2.0",

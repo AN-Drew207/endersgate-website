@@ -48,20 +48,19 @@ function LandingPage() {
           </Box>
           <Box w={["70%", "60%"]} zIndex="2" p={[4, 6]} maxWidth={"1000px"}>
             <Text
-              fontSize={["16px", "34px"]}
+              fontSize={["16px", "24px", "28px", "34px"]}
               fontFamily="Inter"
               fontWeight="bold"
               textAlign="center"
               color="white"
               textShadow="0px 4px 10px #000000"
-              mb={[4, 0]}
-              mr={[0, 8]}
+              mb={[4]}
             >
-              Play for Free. Own what you earn
+              Play for Free. <br /> Own what you earn
             </Text>
             <Text
               color="white"
-              fontSize={["12px", "20px"]}
+              fontSize={["12px", "14px", "15px", "20px"]}
               fontFamily="Inter"
               fontWeight="300"
               textAlign="center"
@@ -171,10 +170,10 @@ function LandingPage() {
           <Box bg="black" p="4">
             <Flex flexDir="column" alignItems="center">
               <Flex
-                w={["90%", "80%"]}
-                h={["auto", "auto", "300px"]}
+                w={["100%", "90%", "85%", "80%"]}
+                h={["auto", "auto", "auto", "350px"]}
                 display="flex"
-                flexDirection={["column", "column", "row"]}
+                flexDirection={["column", "column", "column", "row"]}
                 justifyContent="space-between"
                 alignItems={"center"}
                 bg="black"
@@ -187,7 +186,7 @@ function LandingPage() {
                 border="1px solid #626262"
               >
                 <Box
-                  w={["100%", "100%", "50%"]}
+                  w={["100%", "100%", "100%", "50%"]}
                   display="flex"
                   flexDirection={["column"]}
                   justifyContent="center"
@@ -200,7 +199,7 @@ function LandingPage() {
                     color="white"
                     fontFamily="Inter"
                     textShadow="0px 4px 10px #000000"
-                    textAlign={["center", "center", "left"]}
+                    textAlign={["center", "center", "center", "left"]}
                   >
                     POWERED BY POLYGON!
                   </Text>
@@ -210,12 +209,15 @@ function LandingPage() {
                     fontFamily="Inter"
                     textShadow="0px 4px 10px #000000"
                     mt="2"
-                    textAlign={["center", "center", "left"]}
+                    textAlign={["center", "center", "center", "left"]}
                   >
                     We are proud to say Enders Gate is now officially partnered
                     with Polygon! Access Enders Gate TCG on the MATIC network.
                     Enjoy an enhanced blockchain gaming experience with seamless
-                    transactions and security.
+                    transactions and security. <br />
+                    <br /> Stay tuned for more updates and exciting developments
+                    as we continue to expand our offerings and improve your
+                    gaming experience.
                   </Text>
                 </Box>
                 <Box
@@ -234,11 +236,11 @@ function LandingPage() {
                 </Box>
               </Flex>
               <Flex
-                w={["90%", "80%"]}
-                h={["auto", "auto", "300px"]}
+                w={["100%", "90%", "85%", "80%"]}
+                h={["auto", "auto", "auto", "350px"]}
                 justifyContent="space-between"
                 alignItems={"center"}
-                flexDirection={["column", "column", "row"]}
+                flexDirection={["column", "column", "column", "row"]}
                 bg="black"
                 p="6"
                 my="4"
@@ -249,7 +251,7 @@ function LandingPage() {
                 mt="40px"
               >
                 <Box
-                  w={["100%", "100%", "50%"]}
+                  w={["100%", "100%", "100%", "50%"]}
                   display="flex"
                   flexDirection="column"
                   justifyContent="center"
@@ -262,7 +264,7 @@ function LandingPage() {
                     color="white"
                     fontFamily="Inter"
                     textShadow="0px 4px 10px #000000"
-                    textAlign={["center", "center", "left"]}
+                    textAlign={["center", "center", "center", "left"]}
                   >
                     JOIN OUR COMMUNITY!
                   </Text>
@@ -272,13 +274,16 @@ function LandingPage() {
                     fontFamily="Inter"
                     textShadow="0px 4px 10px #000000"
                     mt="2"
-                    textAlign={["center", "center", "left"]}
+                    textAlign={["center", "center", "center", "left"]}
                   >
                     Discover the latest updates, engage with fellow enthusiasts,
                     and stay tuned for exclusive content. Join us on the Enders
                     Gate Discord server, where adventure awaits at every turn.
                     Don't miss out on the opportunity to be part of our thriving
-                    community!
+                    community! Dive into a world of epic card battles and
+                    camaraderie as you forge new friendships and test your
+                    skills in the ever-evolving world of Enders Gate. Join us
+                    today!
                   </Text>
                 </Box>
                 <Box

@@ -30,7 +30,7 @@ const Heading = ({ connected, connectWallet }: any) => {
         fontWeight="semibold"
         color="white"
       >
-        Explore our collection of 300+ unique hand drawn cards{" "}
+        Explore our collection of 230+ unique hand drawn cards{" "}
       </Text>
       <div
         className={clsx(
