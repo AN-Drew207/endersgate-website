@@ -13,6 +13,7 @@ import Header from "@/components/newComponents/home/header";
 import { initializeApp } from "firebase/app";
 import { ToastProvider } from "react-toast-notifications";
 import { Toaster } from "react-hot-toast";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 
 export default function RootLayout({
   children,
@@ -58,7 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+        <link rel="icon" href="/eg.png" type="image/png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
 
@@ -66,9 +67,9 @@ export default function RootLayout({
           name="description"
           content="Enders Gate: Free-to-play Web3 trading card game inspired by Yu-Gi-Oh, Magic, and Hearthstone. Collect, trade, and battle with unique digital card decks."
         />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.ico" />
+        <link rel="apple-touch-icon" href="/eg.png" />
 
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <link rel="manifest" href="/manifest.json" />
 
         <link
           rel="stylesheet"
