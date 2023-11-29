@@ -29,6 +29,7 @@ const Filters = ({
   connectWallet,
   length,
   connected,
+  setPage,
 }: any) => {
   const [open, setOpen] = useState(false);
   const { Option, SingleValue } = components;
@@ -116,6 +117,7 @@ const Filters = ({
   };
 
   const handleCardsFilterChange = (type: any) => {
+    setPage(0);
     if (cardType === type) {
       setCardType("all");
     } else {
@@ -124,6 +126,7 @@ const Filters = ({
   };
 
   const handleAvatarChange = (checked: any, value: any) => {
+    setPage(0);
     if (checked) {
       setFilters({ ...filters, avatar: [...filters.avatar, value] });
     } else {
@@ -135,6 +138,7 @@ const Filters = ({
   };
 
   const handleRaceChange = (checked: any, value: any) => {
+    setPage(0);
     if (checked) {
       setFilters({ ...filters, cardRace: [...filters.cardRace, value] });
     } else {
@@ -146,6 +150,7 @@ const Filters = ({
   };
 
   const handleRoleChange = (checked: any, value: any) => {
+    setPage(0);
     if (checked) {
       setFilters({ ...filters, cardRole: [...filters.cardRole, value] });
     } else {
@@ -157,6 +162,7 @@ const Filters = ({
   };
 
   const handleElementChange = (checked: any, value: any) => {
+    setPage(0);
     if (checked) {
       setFilters({ ...filters, cardElement: [...filters.cardElement, value] });
     } else {
@@ -168,6 +174,7 @@ const Filters = ({
   };
 
   const handleOwnedChange = (checked: any, value: any) => {
+    setPage(0);
     if (checked) {
       setFilters({ ...filters, owned: [...filters.owned, value] });
     } else {

@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import Web3 from "web3";
 import { networkConfigs } from "@/components/helpers/networks";
 import { useRouter } from "next/navigation";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 // import { useLocation } from "react-router-dom";
 
 const Gallery = () => {
@@ -30,9 +31,11 @@ const Gallery = () => {
   });
   const [search, setSearch] = React.useState("");
   const [cards, setCards] = React.useState<any>([]);
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const [balance, setBalance] = React.useState<any>([]);
   const [connected, setConnected] = React.useState(false);
+
+  const [page, setPage] = React.useState(0);
+
   const { endersGate, pack } = useSelector(
     (state: any) => state.blockchain.addresses,
   );
@@ -368,6 +371,7 @@ const Gallery = () => {
             setSearch={setSearch}
             cardType={cardType}
             setCardType={setCardType}
+            setPage={setPage}
           />
         </Flex>
         <Grid
@@ -386,6 +390,9 @@ const Gallery = () => {
           {cards
             .sort((a: any, b: any) => handleSort(a, b))
             .filter((card: any) => filterCards(card))
+            .filter(
+              (sale: any, i: any) => i < (page + 1) * 35 && i >= page * 35,
+            )
             .map((card: any) => (
               <GridItem key={card?.properties?.id?.value} w="100%">
                 <Card
@@ -405,6 +412,42 @@ const Gallery = () => {
               </GridItem>
             ))}
         </Grid>
+        {cards.length > 35 && (
+          <div className="flex w-full items-center justify-center gap-2 pt-8">
+            <div
+              className="rounded-full flex items-center bg-secondary text-white p-4 cursor-pointer"
+              onClick={() => {
+                if (page > 0) {
+                  setPage((prev) => {
+                    return prev - 1;
+                  });
+                }
+              }}
+            >
+              <LeftOutlined />
+            </div>
+            <div className="p-3 px-5 flex items-center justify-center rounded-full bg-overlay border border-primary text-[#fff]">
+              {page + 1}
+            </div>
+            <div
+              className="rounded-full flex items-center bg-secondary text-white p-4 cursor-pointer"
+              onClick={() => {
+                if (
+                  page <
+                  Math.floor(
+                    cards.filter((card: any) => filterCards(card)).length / 35,
+                  )
+                ) {
+                  setPage((prev) => {
+                    return prev + 1;
+                  });
+                }
+              }}
+            >
+              <RightOutlined />
+            </div>
+          </div>
+        )}
       </Flex>
     </>
   );
