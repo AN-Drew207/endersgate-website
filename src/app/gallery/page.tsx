@@ -412,7 +412,7 @@ const Gallery = () => {
               </GridItem>
             ))}
         </Grid>
-        {cards.length > 35 && (
+        {cards.filter((card: any) => filterCards(card)).length > 35 && (
           <div className="flex w-full items-center justify-center gap-2 pt-8">
             <div
               className="rounded-full flex items-center bg-secondary text-white p-4 cursor-pointer"
