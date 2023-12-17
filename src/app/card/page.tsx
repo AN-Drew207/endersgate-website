@@ -214,7 +214,7 @@ const Details = () => {
                   marginBottom: "0px",
                   display: isCardFlipped ? "none" : "inline-block",
                 }}
-                src={card?.properties?.image?.value}
+                src={card?.image}
                 alt=""
               />
               <Image
@@ -400,7 +400,7 @@ const Details = () => {
                     h="180px"
                     alt={item?.description}
                     mx={2}
-                    src={item?.properties?.image?.value}
+                    src={item?.image}
                   />
                 ))}
               </Flex>
@@ -422,7 +422,7 @@ const Details = () => {
                   w="140px"
                   h="180px"
                   alt={synergiesCards[0].description}
-                  src={synergiesCards[0]?.properties?.image?.value}
+                  src={synergiesCards[0]?.image}
                 />
               </Flex>
             ) : synergiesCards?.length === 3 ? (
@@ -444,7 +444,7 @@ const Details = () => {
                     w="140px"
                     h="180px"
                     alt={synergiesCards[0].description}
-                    src={synergiesCards[0]?.properties?.image?.value}
+                    src={synergiesCards[0]?.image}
                   />
                   <Image
                     onClick={() =>
@@ -462,7 +462,7 @@ const Details = () => {
                     w="140px"
                     h="180px"
                     alt={synergiesCards[1].description}
-                    src={synergiesCards[1]?.properties?.image?.value}
+                    src={synergiesCards[1]?.image}
                   />
                   <Box
                     pos="absolute"
@@ -486,7 +486,7 @@ const Details = () => {
                       w="140px"
                       h="180px"
                       alt={synergiesCards[2].description}
-                      src={synergiesCards[2]?.properties?.image?.value}
+                      src={synergiesCards[2]?.image}
                     />
                   </Box>
                 </Flex>

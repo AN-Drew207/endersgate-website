@@ -375,7 +375,7 @@ const Details = () => {
                       navigate("/gallery/detailpage", {
                         state: {
                           desc: item?.description,
-                          imge: item?.properties?.image?.value,
+                          imge: item?.image,
                           ctype: cardType,
                           name: item?.name,
                           rarity: item?.properties?.rarity?.value,
@@ -393,7 +393,7 @@ const Details = () => {
                     h="180px"
                     alt={item?.description}
                     mx={2}
-                    src={item?.properties?.image?.value}
+                    src={item?.image}
                   />
                 ))}
               </Flex>
@@ -404,7 +404,7 @@ const Details = () => {
                     navigate("/gallery/detailpage", {
                       state: {
                         desc: synergiesCards[0]?.description,
-                        imge: synergiesCards[0]?.properties?.image?.value,
+                        imge: synergiesCards[0]?.image,
                         ctype: cardType,
                         name: synergiesCards[0]?.name,
                         rarity: synergiesCards[0]?.properties?.rarity?.value,
@@ -423,7 +423,7 @@ const Details = () => {
                   w="140px"
                   h="180px"
                   alt={synergiesCards[0].description}
-                  src={synergiesCards[0]?.properties?.image?.value}
+                  src={synergiesCards[0]?.image}
                 />
               </Flex>
             ) : synergiesCards?.length === 3 ? (
@@ -434,7 +434,7 @@ const Details = () => {
                       navigate("/gallery/detailpage", {
                         state: {
                           desc: synergiesCards[0]?.description,
-                          imge: synergiesCards[0]?.properties?.image?.value,
+                          imge: synergiesCards[0]?.image,
                           ctype: cardType,
                           name: synergiesCards[0]?.name,
                           rarity: synergiesCards[0]?.properties?.rarity?.value,
@@ -452,14 +452,14 @@ const Details = () => {
                     w="140px"
                     h="180px"
                     alt={synergiesCards[0].description}
-                    src={synergiesCards[0]?.properties?.image?.value}
+                    src={synergiesCards[0]?.image}
                   />
                   <Image
                     onClick={() =>
                       navigate("/gallery/detailpage", {
                         state: {
                           desc: synergiesCards[1]?.description,
-                          imge: synergiesCards[1]?.properties?.image?.value,
+                          imge: synergiesCards[1]?.image,
                           ctype: cardType,
                           name: synergiesCards[1]?.name,
                           rarity: synergiesCards[1]?.properties?.rarity?.value,
@@ -477,7 +477,7 @@ const Details = () => {
                     w="140px"
                     h="180px"
                     alt={synergiesCards[1].description}
-                    src={synergiesCards[1]?.properties?.image?.value}
+                    src={synergiesCards[1]?.image}
                   />
                   <Box
                     pos="absolute"
@@ -490,7 +490,7 @@ const Details = () => {
                         navigate("/gallery/detailpage", {
                           state: {
                             desc: synergiesCards[2]?.description,
-                            imge: synergiesCards[2]?.properties?.image?.value,
+                            imge: synergiesCards[2]?.image,
                             ctype: cardType,
                             name: synergiesCards[2]?.name,
                             rarity:
@@ -509,7 +509,7 @@ const Details = () => {
                       w="140px"
                       h="180px"
                       alt={synergiesCards[2].description}
-                      src={synergiesCards[2]?.properties?.image?.value}
+                      src={synergiesCards[2]?.image}
                     />
                   </Box>
                 </Flex>

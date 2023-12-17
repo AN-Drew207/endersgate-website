@@ -402,7 +402,7 @@ const Gallery = () => {
                   name={card?.properties?.name?.value}
                   rarity={card?.properties?.rarity?.value}
                   description={card?.description}
-                  image={card?.properties?.image?.value}
+                  image={card?.image}
                   balance={
                     (balance as any).filter(
                       (item: any) => item.id === card?.properties?.id?.value,
