@@ -9,6 +9,7 @@ import { convertArrayCards } from "@/components/common/convertCards";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getContractCustom, getContractMetamask } from "@/web3";
 import { getAddresses, mainExpected } from "@/components/common/getAddresses";
+import { ChevronLeftIcon } from "@heroicons/react/solid";
 
 const Details = () => {
   const [allCards, setAllCards] = useState([]);
@@ -47,7 +48,11 @@ const Details = () => {
   const findSynergies = () => {
     let arr: any = [];
     card?.synergies?.forEach((item: any) => {
-      console.log(cards.find((card) => card.name == item));
+      console.log(
+        cards.find((card) => card.name == item),
+        item,
+        "synergy",
+      );
       arr.push(cards.find((card) => card.name == item));
     });
     setSynergiesCards(arr);
@@ -167,11 +172,7 @@ const Details = () => {
           colorScheme="grey.700"
           border="1px solid gold"
         >
-          <Image
-            w="4"
-            src={"./assets/arrowleftdetailspage.svg"}
-            style={{ marginRight: ".5rem" }}
-          />
+          <ChevronLeftIcon className="flex w-6 text-yellow-500" />
           <Text color="galleryGold">BACK</Text>
         </Button>
         <Text fontSize={["xl", "2xl", "3xl", "3xl"]} color="grey.500" mx={5}>
@@ -214,7 +215,7 @@ const Details = () => {
                   marginBottom: "0px",
                   display: isCardFlipped ? "none" : "inline-block",
                 }}
-                src={card?.image}
+                src={card?.properties?.image?.value}
                 alt=""
               />
               <Image
@@ -224,7 +225,7 @@ const Details = () => {
                   marginBottom: "0px",
                   display: isCardFlipped ? "inline-block" : "none",
                 }}
-                src={flippedCard}
+                src={card?.properties?.back?.value}
                 alt=""
               />
             </Tilt>
@@ -421,7 +422,7 @@ const Details = () => {
                   objectFit="contain"
                   w="140px"
                   h="180px"
-                  alt={synergiesCards[0].description}
+                  alt={synergiesCards[0]?.description}
                   src={synergiesCards[0]?.image}
                 />
               </Flex>
