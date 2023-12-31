@@ -34,40 +34,6 @@ const Heading = ({ connected, connectWallet }: any) => {
       >
         Explore our collection of 230+ unique hand drawn cards{" "}
       </Text>
-      <div
-        className={clsx(
-          "w-36 absolute mr-10 bottom-0 right-0 flex flex-col gap-2",
-        )}
-      >
-        {!connected && (
-          <div
-            className={clsx(
-              "w-36 text-xs text-center border border-[#ffdb8a] p-2 text-white",
-            )}
-          >
-            {"Don't have a metamask wallet? Click"}{" "}
-            <a
-              href="https://endersgate.gitbook.io/endersgate/welcome/getting-started/metamask-browser-extension-wallet"
-              target={"_blank"}
-              className={clsx("text-[#ffdb8a]")}
-            >
-              {" "}
-              here for a walk through to get one
-            </a>
-          </div>
-        )}
-        <img
-          // style={{ marginRight: "5px" }}
-          className={clsx({ "cursor-pointer": !connected }, "w-36")}
-          src={
-            connected
-              ? "./assets/WALLET_CONNECTED.png"
-              : "./assets/CONNECT_WALLET.png"
-          }
-          alt="wallet_button"
-          onClick={connected ? undefined : connectWallet}
-        />
-      </div>
     </Flex>
   );
 };
