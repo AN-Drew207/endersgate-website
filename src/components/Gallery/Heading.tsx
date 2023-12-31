@@ -10,10 +10,12 @@ const Heading = ({ connected, connectWallet }: any) => {
       textAlign="center"
       px={2}
       borderBottom="2px solid gold"
-      h="56"
+      h={["350px", "350px", "300px", "56"]}
       bg="rgba(0, 0, 0, 0.2)"
-      justifyContent="center"
       alignItems="center"
+      justifyContent={["start", "start", "start", "center"]}
+      pt={["20%", "20%", "20%", "0"]}
+      paddingX="10%"
       flexDir="column"
       w="full"
     >

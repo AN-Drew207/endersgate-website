@@ -54,7 +54,7 @@ const HomeTop = () => {
       justifyContent="center"
       alignItems="center"
       w="100%"
-      h={["500px", "600px", "800px", "1000px"]}
+      h={["600px", "600px", "800px", "1000px"]}
       pos="relative"
       overflow="hidden"
     >
@@ -148,7 +148,7 @@ const HomeTop = () => {
           mb={["-18px", "5px"]}
         >
           <Text
-            fontSize={["12px", "24px"]}
+            fontSize={["18px", "24px"]}
             fontFamily="Inter"
             fontWeight="bold"
             textAlign="center"
@@ -168,28 +168,28 @@ const HomeTop = () => {
           flexDirection={["row"]}
           justifyContent="center"
           alignItems={["center", "center", "flex-start"]}
-          w={["80%", "90%"]}
+          w={["100%", "90%"]}
           mt={[4, 0]}
-          flexWrap="nowrap"
+          flexWrap="wrap"
           zIndex="2"
+          gap={[2, 4, 4, 4, 4, 8]}
         >
-          <Link href="https://endersgate.app" target={"_blank"} mr={[4, 4, 8]}>
+          <Link href="https://endersgate.app" target={"_blank"}>
             <Image
               src={"./assets/storeLogos/pc.png"}
               alt="PC Logo"
-              w={["140px", "250px"]}
+              w={["155px", "160px", "160px", "160px", "160px", "250px"]}
               h="auto"
             />
           </Link>
           <Link
-            href=" https://forms.gle/N6fh6FjKPw82j9EW9"
+            href="https://testflight.apple.com/join/pUbzHdCV"
             target={"_blank"}
-            mr={[4, 4, 8]}
           >
             <Image
               src={"./assets/storeLogos/apple.png"}
               alt="Apple Store Logo"
-              w={["140px", "250px"]}
+              w={["155px", "160px", "160px", "160px", "160px", "250px"]}
               h="auto"
             />
           </Link>
@@ -200,7 +200,7 @@ const HomeTop = () => {
             <Image
               src={"./assets/storeLogos/android.png"}
               alt="Android Store Logo"
-              w={["140px", "250px"]}
+              w={["155px", "160px", "160px", "160px", "160px", "250px"]}
               h="auto"
             />
           </Link>

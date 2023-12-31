@@ -7,8 +7,8 @@ function Footer() {
   return (
     <>
       <Partners />
-      <div className="w-full h-[264px] bg-black   flex flex-col justify-center items-center">
-        <div className="h-[156px] w-full md:w-1283px flex flex-col justify-center items-center">
+      <div className="w-full md:h-[264px] bg-black   flex flex-col justify-center items-center">
+        <div className="md:h-[156px] w-full md:w-1283px flex flex-col justify-center items-center">
           <p className="font-inter font-bold  text-white mb-6 mt-5 project-text">
             Join the Community:
           </p>

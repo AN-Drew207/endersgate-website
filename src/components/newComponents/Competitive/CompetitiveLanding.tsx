@@ -118,7 +118,7 @@ export const CompetitiveLanding = () => {
             </Link>
             <Link
               target={"_blank"}
-              href=" https://forms.gle/N6fh6FjKPw82j9EW9"
+              href=" https://testflight.apple.com/join/pUbzHdCV"
               mr={[4, 4, 8]}
             >
               <Box mr="8px">

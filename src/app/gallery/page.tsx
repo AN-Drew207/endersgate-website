@@ -381,6 +381,7 @@ const Gallery = () => {
           px={10}
           gap="10"
           templateColumns={[
+            "repeat(2, 1fr)",
             "repeat(3, 1fr)",
             "repeat(3,1fr)",
             "repeat(4,1fr)",
@@ -402,7 +403,7 @@ const Gallery = () => {
                   name={card?.properties?.name?.value}
                   rarity={card?.properties?.rarity?.value}
                   description={card?.description}
-                  image={card?.image}
+                  image={card?.properties?.image?.value}
                   balance={
                     (balance as any).filter(
                       (item: any) => item.id === card?.properties?.id?.value,
