@@ -42,7 +42,7 @@ function LandingPage() {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/YmxknzO-2-k?si=LxQs_TnxbbjeRIbz"
+              src="https://www.youtube.com/embed/j3LbTU7i2PQ?si=NNbW8ws72zSmJRe2"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
