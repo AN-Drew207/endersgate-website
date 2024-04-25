@@ -22,8 +22,8 @@ const Table = () => {
               className="text-lg sm:text-xs md:text-base text-white text-center md:text-center leading-tight overflow-hidden h-16"
               style={{ color: "#B8B8B8" }}
             >
-              Discover a collection of over 230 unique, hand-drawn playing
-              cards.
+              Shop our exclusive limited-edition digital trading cards and card
+              packs!
             </p>
           </a>
           <div className="flex flex-col items-center justify-center relative">
@@ -43,7 +43,8 @@ const Table = () => {
               className="text-lg sm:text-xs md:text-base text-white text-center md:text-center leading-tight overflow-hidden h-16"
               style={{ color: "#B8B8B8" }}
             >
-              Collect the lore & enjoy original stories for free or mint a copy.
+              Enjoy the Enders Gate™ Lore by minting our physical and digital
+              comic books!
             </p>
           </div>
           <a
@@ -60,7 +61,8 @@ const Table = () => {
               className="text-lg sm:text-xs md:text-base text-white text-center md:text-center leading-tight overflow-hidden h-16"
               style={{ color: "#B8B8B8" }}
             >
-              Search through our collection of over 300 unique hand-drawn cards.
+              Browse the curated peer-to-peer Marketplace for Players and
+              Collectors.
             </p>
           </a>
         </div>
@@ -82,8 +84,8 @@ const Table = () => {
               className="text-lg sm:text-xs md:text-base text-white text-center md:text-center leading-tight  h-16"
               style={{ color: "#B8B8B8" }}
             >
-              Find out more about Enders Gate, join community events, giveaways,
-              airdrops and more!
+              Participate in weekly card battle tournaments for rewards and
+              glory!
             </p>
           </div>
           <a
@@ -100,8 +102,8 @@ const Table = () => {
               className="text-lg sm:text-xs md:text-base text-white text-center md:text-center leading-tight overflow-hidden h-16"
               style={{ color: "#B8B8B8" }}
             >
-              Discover a collection of over 230 unique, hand-drawn playing
-              cards.
+              Ask questions, join community events, giveaways, airdrops and
+              more!
             </p>
           </a>
           <Link
@@ -117,8 +119,7 @@ const Table = () => {
               className="text-lg sm:text-xs md:text-base text-white text-center md:text-center leading-tight overflow-hidden h-16"
               style={{ color: "#B8B8B8" }}
             >
-              Discover a collection of over 230 unique, hand-drawn playing
-              cards.
+              Search through our collection of over 300 unique hand-drawn cards.
             </p>
           </Link>
         </div>
